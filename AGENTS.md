@@ -2,11 +2,23 @@
 
 Este repositorio está configurado para la resolución automatizada y generación de informes de ejercicios prácticos de **Estadística Inferencial** de la **Universidad Privada de Tacna (Facultad de Ingeniería, Escuela Profesional de Ingeniería de Sistemas)**, dictados por el docente **Dr. Luis A. Fernández Vizcarra**.
 
-Cualquier agente que trabaje en este repositorio debe seguir **estrictamente** las directrices descritas a continuación cuando el usuario solicite resolver ejercicios de una guía, PDF o documento Word.
+Cualquier agente que trabaje en este repositorio debe seguir **estrictamente** las directrices descritas a continuación.
 
 ---
 
-## 1. Flujo de Trabajo Obligatorio al Recibir Ejercicios
+## 1. Disparador / Comando Obligatorio: "preparate" o "prepárate"
+
+Cuando el usuario escriba **"preparate"**, **"prepárate"**, **"prepara el entorno"** o similar inmediatamente después de clonar el repositorio:
+El agente DEBE ejecutar de forma autónoma y sin pedir confirmación adicional los siguientes comandos:
+```bash
+pip install -r requirements.txt
+playwright install chromium
+```
+Y verificar con una prueba rápida de importación (`python -c "import scipy, docx, playwright; print('OK')"`), notificando al usuario que el entorno está completamente listo para recibir cualquier archivo Word (.docx) y resolverlo al instante.
+
+---
+
+## 2. Flujo de Trabajo Obligatorio al Recibir Ejercicios
 
 Cuando el usuario proporcione un documento Word (.docx), PDF o texto con ejercicios a resolver:
 

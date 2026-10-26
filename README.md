@@ -4,41 +4,40 @@ Repositorio para la resolución automatizada, cálculo estadístico y maquetaci�
 
 ---
 
+## ⚡ Activación Inmediata con la IA
+
+Cuando clones este repositorio y abras el chat de la IA (Antigravity / Gemini), solo escribe:
+
+> **`preparate`** (o **`prepárate`**)
+
+La IA automáticamente ejecutará:
+```bash
+pip install -r requirements.txt
+playwright install chromium
+```
+Y dejará el entorno 100% operativo sin que tengas que teclear ningún comando manualmente.
+
+---
+
 ## 📋 Estructura del Repositorio
 
-- **`AGENTS.md` / `GEMINI.md`:** Instrucciones automáticas para agentes de IA para que al clonar el repositorio resuelvan cualquier guía Word (.docx) o PDF siguiendo la metodología y formato exacto del docente.
+- **`AGENTS.md` / `GEMINI.md`:** Instrucciones automáticas para agentes de IA para que al clonar el repositorio reconozcan el comando `preparate` y resuelvan cualquier guía Word (.docx) o PDF siguiendo la metodología y formato exacto del docente.
 - **`.agents/rules/`:** Reglas permanentes del espacio de trabajo sobre el formato de los pasos (Paso 1 a Paso 7/8), redacción estricta y concisa de conclusiones, y criterios estadísticos.
+- **`setup.bat`:** Script por lotes para Windows que ejecuta la instalación en un solo clic si prefieres no usar el chat.
 - **`generate_kruskal_images.py`:** Script generador de tablas auténticas de IBM SPSS Statistics 26-29 en formato PNG (Informe, Shapiro-Wilk, Rangos, Estadísticos de prueba).
 - **`build_kruskal_doc.py`:** Generador del documento Word A4 con membrete institucional y exportador a PDF nativo.
 - **`generated_kruskal_images/`:** Directorio con las capturas de SPSS de alta definición generadas para cada ejercicio.
 
 ---
 
-## 🚀 Instalación y Puesta en Marcha
-
-Para cualquier persona o entorno que clone este repositorio:
-
-```bash
-# 1. Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
-cd Estats
-
-# 2. Instalar dependencias de Python
-pip install -r requirements.txt
-
-# 3. Instalar navegadores para el generador de tablas SPSS (Playwright)
-playwright install chromium msedge
-```
-
----
-
 ## 🛠️ Cómo Resolver Nuevos Ejercicios
 
-Cualquier agente de IA conectado a este repositorio leerá automáticamente `AGENTS.md` y sabrá cómo proceder. Para resolver una nueva guía de ejercicios:
-
-1. Proporciona el archivo `.docx` o enunciado de los ejercicios.
-2. El asistente o script:
-   - Calculará las pruebas de normalidad (**Shapiro-Wilk**).
-   - Determinará la prueba adecuada (**Kruskal-Wallis** para muestras no normales, o **ANOVA** + **Tukey** para muestras normales con varianzas homogéneas).
-   - Renderizará las tablas con estética oficial de SPSS.
-   - Compilará el informe en formato Word `.docx` y `.pdf` manteniendo las **conclusiones breves y directas** en el Paso 7/8.
+1. Escribe a la IA: `preparate`
+2. Pasa el archivo `.docx` o enunciado de los ejercicios:
+   > *"Resuelve este documento: @[Guia_Ejercicios.docx]"*
+3. La IA automáticamente:
+   - Extraerá los datos numéricos.
+   - Verificará supuestos (Shapiro-Wilk para normalidad y Levene para varianzas).
+   - Elegirá la prueba correcta (Kruskal-Wallis para no paramétricas o ANOVA + Tukey para paramétricas).
+   - Generará las tablas SPSS en PNG.
+   - Compilará y entregará el informe en `.docx` y `.pdf` con conclusiones directas.
