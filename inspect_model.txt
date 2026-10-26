@@ -1,0 +1,479 @@
+=================== PEREZ _AROCUTIPA_LLICA - APLICACIÓN DE ESTADÍSTICA INFERENCIAL CON DATOS REALES.docx ===================
+[0] UNIVERSIDAD PRIVADA DE TACNA (drawings: 2)
+[1] FACULTAD DE INGENIERÍA (drawings: 2)
+[2] ESCUELA DE INGENIERÍA DE SISTEMAS (drawings: 2)
+[3]  (drawings: 2)
+[4] Trabajo Práctico (drawings: 2)
+[5]  (drawings: 1)
+[6] “APLICACIÓN DE ESTADÍSTICA INFERENCIAL CON DATOS REALES” (drawings: 2)
+[7]  (drawings: 1)
+[8]  (drawings: 1)
+[9]  (drawings: 1)
+[10] Que se presenta para el curso: (drawings: 2)
+[11] APLICACIÓN DE ESTADÍSTICA INFERENCIAL CON DATOS REALES (drawings: 2)
+[12]  (drawings: 1)
+[13]  (drawings: 1)
+[14] Docente: (drawings: 2)
+[15] LUIS ALFREDO FERNANDEZ VIZCARRA (drawings: 2)
+[16]  (drawings: 1)
+[17]  (drawings: 1)
+[18]  (drawings: 1)
+[19] Arocutipa Arocutipa, Gian Franco  (2023076790) (drawings: 1)
+[20]  (drawings: 1)
+[21] Perez Peralta, Fabrizio Salvador Elias  (2023077476) (drawings: 2)
+[22]  (drawings: 1)
+[23] LLica Mamani, Jimmy Mijair  (2023076789) (drawings: 2)
+[24]  (drawings: 1)
+[25]  (drawings: 1)
+[26]  (drawings: 1)
+[27] TACNA – PERÚ (drawings: 2)
+[28] 2026 (drawings: 2)
+[29]  (drawings: 1)
+[30]  (drawings: 1)
+[31]  (drawings: 1)
+[32] Índice General (drawings: 2)
+[33]  (drawings: 1)
+[34]  (drawings: 1)
+[35]  (drawings: 1)
+[36]  (drawings: 1)
+[37]  (drawings: 1)
+[38]  (drawings: 1)
+[39]  (drawings: 1)
+[40]  (drawings: 1)
+[41]  (drawings: 1)
+[42]  (drawings: 1)
+[43]  (drawings: 1)
+[44]  (drawings: 1)
+[45]  (drawings: 1)
+[46]  (drawings: 1)
+[47]  (drawings: 1)
+[48]  (drawings: 1)
+[49]  (drawings: 1)
+[50]  (drawings: 1)
+[51]  (drawings: 1)
+[52]  (drawings: 1)
+[53]  (drawings: 1)
+[54]  (drawings: 1)
+[55]  (drawings: 1)
+[56]  (drawings: 1)
+[57]  (drawings: 1)
+[58]  (drawings: 1)
+[59]  (drawings: 1)
+[60]  (drawings: 1)
+[61]  (drawings: 1)
+[62]  (drawings: 1)
+[63]  (drawings: 1)
+[64]  (drawings: 1)
+[65] Informe (drawings: 1)
+[66]  (drawings: 1)
+[67] Descripción del Proyecto (drawings: 1)
+[68] Nombre y fuente: “GitHub Repositories – Heterogeneous Data”, extraído de Kaggle Datasets (https://www.kaggle.com/datasets); repositorios de código abierto en Python. (drawings: 2)
+[69] Registros analizados: 1567 repositorios (de 66 641 registros brutos originales), comparados por tipo de propietario (Organization: 878 / User: 689) y por tipo de licencia (MIT: 546 / Apache-2.0: 405). (drawings: 2)
+[70] Variables cuantitativas: stars, forks, watchers, open_issues y size_kb. (drawings: 2)
+[71] Variables categóricas de agrupación: owner_type (Organization / User) y license_spdx_id (MIT / Apache-2.0). (drawings: 2)
+[72] Descripción de las variables seleccionadas para el análisis: (drawings: 1)
+[73] stars (cuantitativa discreta): número de estrellas recibidas por el repositorio; es el indicador principal de popularidad dentro de la comunidad. (drawings: 1)
+[74] forks (cuantitativa discreta): número de bifurcaciones (copias derivadas) del repositorio; refleja el grado de reutilización y colaboración. (drawings: 1)
+[75] open_issues (cuantitativa discreta): cantidad de incidencias (issues) abiertas; indicador del nivel de actividad y mantenimiento pendiente del proyecto. (drawings: 1)
+[76] watchers y size_kb (cuantitativas): variables descriptivas de apoyo — watchers coincide en este dataset con stars, y size_kb (tamaño del repositorio en KB) ayuda a caracterizar la magnitud del proyecto. (drawings: 1)
+[77] owner_type (cualitativa nominal, dos categorías): tipo de propietario del repositorio — Organization (878 repos) o User (689 repos). Define la comparación principal de dos grupos independientes. (drawings: 1)
+[78] license_spdx_id (cualitativa nominal, dos categorías consideradas): tipo de licencia — MIT (546 repos) o Apache-2.0 (405 repos). Define una comparación secundaria de dos grupos independientes. (drawings: 1)
+[79]  (drawings: 1)
+[80] Planteamiento del análisis (drawings: 1)
+[81]  (drawings: 1)
+[82] El ecosistema de código abierto en GitHub agrupa repositorios mantenidos tanto por organizaciones (empresas, comunidades, fundaciones) como por usuarios individuales, y distribuidos bajo distintos tipos de licencia de software. Se desea analizar si existen diferencias estadísticamente significativas en los indicadores de popularidad y actividad (estrellas, forks e issues abiertos) entre estos segmentos, y si dichos indicadores, tomados en conjunto, se ajustan o no a valores de referencia comúnmente utilizados para caracterizar un repositorio “popular” o “activo” en el lenguaje Python. (drawings: 1)
+[83] Preguntas de investigación: (drawings: 1)
+[84] Q1 (una muestra): ¿El promedio de estrellas (stars) de los repositorios Python de código abierto difiere de 5000? (drawings: 1)
+[85] Q2 (una muestra): ¿El promedio de forks de los repositorios supera 1000? (drawings: 1)
+[86] Q3 (una muestra): ¿El promedio de issues abiertos (open_issues) difiere de 100? (drawings: 1)
+[87] Q4 (dos grupos): ¿Existen diferencias significativas en stars, forks e issues abiertos entre repositorios de Organizaciones y de Usuarios individuales? (drawings: 1)
+[88] Q5 (dos grupos): ¿Existen diferencias significativas en stars, forks e issues abiertos entre repositorios con licencia MIT y Apache-2.0? (drawings: 1)
+[89]  (drawings: 1)
+[90] Variables involucradas: stars, forks y open_issues (variables dependientes cuantitativas); owner_type y license_spdx_id (variables independientes categóricas de dos niveles). (drawings: 1)
+[91] Justificación de la selección: stars, forks y open_issues son los indicadores más utilizados por la comunidad de desarrollo de software para medir popularidad, adopción y actividad de mantenimiento de un repositorio, por lo que resultan pertinentes tanto para una prueba de hipótesis sobre un promedio como para la comparación entre grupos independientes. owner_type y license_spdx_id constituyen criterios de segmentación naturales del dataset (tipo de propietario y tipo de licencia), lo que permite aplicar la secuencia completa de procedimientos exigida por el trabajo. (drawings: 1)
+[92]  (drawings: 1)
+[93] Análisis descriptivo y estimación (drawings: 1)
+[94] Estadísticos descriptivos generales (drawings: 1)
+[95] La tabla 1 presenta los estadísticos descriptivos para la muestra completa (n = 1567). (drawings: 1)
+[96] Tabla 1. Estadísticos descriptivos generales. (drawings: 2)
+[97] Tabla 2. Asimetría y curtosis. (drawings: 1)
+[98]  (drawings: 1)
+[99]  (drawings: 1)
+[100]  (drawings: 1)
+[101] Interpretación: en todas las variables la media supera a la mediana, evidenciando asimetría positiva (cola hacia la derecha). Esta asimetría es moderada en stars (0.60) y muy marcada en forks, open_issues y, en especial, size_kb (asimetría = 16.94; curtosis = 373.41), lo que indica la presencia de un pequeño grupo de repositorios con tamaño o actividad muy por encima del resto del dataset. (drawings: 2)
+[102]  (drawings: 1)
+[103]  (drawings: 1)
+[104] Estimación puntual (drawings: 1)
+[105] A partir de la muestra (n = 1567), las mejores estimaciones puntuales de los parámetros poblacionales son: media de stars = 8963.88 (varianza = 19 461 426.70; desviación estándar = 4411.51); media de forks = 1318.58 (varianza = 1 467 748.40; desviación estándar = 1211.51); media de open_issues = 179.91 (varianza = 113 922.21; desviación estándar = 337.52). (drawings: 1)
+[106]  (drawings: 1)
+[107]  (drawings: 1)
+[108]  (drawings: 1)
+[109] Intervalos de confianza (95 %) (drawings: 2)
+[110] Tabla 3. Intervalos de confianza al 95 % para la media (n = 1567). (drawings: 2)
+[111]  (drawings: 1)
+[112] Interpretación: con 95 % de confianza, el promedio poblacional de stars, forks y open_issues se ubica dentro de los intervalos anteriores; en los tres casos el valor de referencia planteado en la sección 2 (5000, 1000 y 100 respectivamente) queda fuera del intervalo, lo que anticipa el rechazo de H₀ en las pruebas de la sección 5. (drawings: 1)
+[113]  (drawings: 1)
+[114] Intervalo de confianza para una proporción: de los 1567 repositorios, 573 (36.57 %) tienen más de 10 000 estrellas — IC 95 % = [34.18 % ; 38.95 %] —, y 130 (8.30 %) superan los 500 issues abiertos. Con 95 % de confianza, entre un tercio y dos quintos de los repositorios Python de código abierto representados por el dataset alcanzan ese nivel de popularidad. (drawings: 1)
+[115]  (drawings: 1)
+[116]  (drawings: 1)
+[117] Verificación de supuestos (drawings: 1)
+[118] Para validar el uso de pruebas paramétricas (t de Student / t de Welch) se verificaron los supuestos de normalidad (Shapiro-Wilk, H₀: los datos siguen una distribución normal) y homogeneidad de varianzas (Levene, H₀: las varianzas de ambos grupos son iguales), con α = 0.05 en ambos casos. (drawings: 1)
+[119]  (drawings: 1)
+[120] Distribución normal en la inferencia (drawings: 1)
+[121] La distribución normal es el supuesto teórico sobre el que se apoyan la mayoría de los procedimientos paramétricos empleados en este trabajo (estimación por intervalos y pruebas t para una y dos muestras): estos métodos asumen que la distribución muestral de la media se comporta de forma aproximadamente normal, aunque la variable original no lo sea. En variables de conteo con fuerte asimetría positiva, como stars, forks y open_issues, la normalidad rara vez se cumple a nivel individual, como se confirma en las Tablas 4 a 6. Sin embargo, el Teorema del Límite Central garantiza que, para tamaños de muestra grandes (n ≥ 405 en todos los subgrupos analizados), la distribución muestral de la media se aproxima a una normal incluso cuando los datos originales están lejos de serlo, lo que respalda formalmente el uso de las pruebas t desarrolladas en las secciones 5 y 6. (drawings: 1)
+[122]  (drawings: 1)
+[123]  (drawings: 1)
+[124]  (drawings: 1)
+[125]  (drawings: 1)
+[126]  (drawings: 1)
+[127]  (drawings: 1)
+[128]  (drawings: 1)
+[129]  (drawings: 1)
+[130]  (drawings: 1)
+[131]  (drawings: 1)
+[132]  (drawings: 1)
+[133] Prueba de normalidad (Shapiro-Wilk) (drawings: 2)
+[134] Tabla 4. Shapiro-Wilk — muestra completa (n = 1567). (drawings: 2)
+[135]  (drawings: 1)
+[136]  (drawings: 1)
+[137] Tabla 5. Shapiro-Wilk por grupo — Organization vs. User. (drawings: 2)
+[138]  (drawings: 1)
+[139]  (drawings: 1)
+[140]  (drawings: 1)
+[141]  (drawings: 1)
+[142]  (drawings: 1)
+[143]  (drawings: 1)
+[144] Tabla 6. Shapiro-Wilk por grupo — MIT vs. Apache-2.0. (drawings: 2)
+[145]  (drawings: 1)
+[146]  (drawings: 1)
+[147] Interpretación: en todos los casos p < 0.05, por lo que se rechaza H₀ y ninguna variable sigue una distribución normal, ni de forma global ni por subgrupo. No obstante, dado el gran tamaño muestral (n > 400 en todos los subgrupos), el Teorema del Límite Central permite que la distribución muestral de la media se aproxime a la normal, lo que justifica el uso de las pruebas t en las secciones 5 y 6. (drawings: 1)
+[148]  (drawings: 1)
+[149]  (drawings: 1)
+[150]  (drawings: 1)
+[151]  (drawings: 1)
+[152]  (drawings: 1)
+[153]  (drawings: 1)
+[154]  (drawings: 1)
+[155]  (drawings: 1)
+[156]  (drawings: 1)
+[157] Homogeneidad de varianzas (prueba de Levene) (drawings: 2)
+[158] Tabla 7. Levene — Organization vs. User. (drawings: 2)
+[159]  (drawings: 1)
+[160] Tabla 8. Levene — MIT vs. Apache-2.0. (drawings: 2)
+[161]  (drawings: 1)
+[162]  (drawings: 1)
+[163]  (drawings: 1)
+[164] Interpretación: a diferencia de la normalidad, el resultado de Levene sí varía según la variable: en Organization vs. User no hay homogeneidad de varianzas en Stars y Open Issues (se usa t de Welch), mientras que en MIT vs. Apache-2.0 la única variable sin homogeneidad es Open Issues. Esta decisión se aplica de forma independiente para cada variable en la comparación de grupos de la sección 6. (drawings: 1)
+[165]  (drawings: 1)
+[166] Prueba de hipótesis para una muestra (drawings: 1)
+[167]  (drawings: 1)
+[168] Se contrastan los tres valores de referencia de las preguntas Q1-Q3 mediante la prueba t para una muestra (α = 0.05, n = 1567, gl = 1566). (drawings: 1)
+[169] Tabla 9. Pruebas t para una muestra. (drawings: 1)
+[170]  (drawings: 1)
+[171]  (drawings: 1)
+[172]  (drawings: 1)
+[173] Interpretación: en los tres casos se rechaza H₀ (p < 0.01). El promedio real de stars (8963.88) es significativamente superior a 5000; el de forks (1318.58) supera significativamente las 1000 bifurcaciones; y el de open_issues (179.91) es significativamente superior a 100 incidencias abiertas. (drawings: 1)
+[174]  (drawings: 1)
+[175] Tamaño del efecto (d de Cohen) (drawings: 1)
+[176] Con n = 1567, incluso diferencias pequeñas resultan estadísticamente significativas; por ello conviene complementar el p-valor con una medida del tamaño del efecto, calculada como d = (media − μ₀) / desviación estándar. (drawings: 1)
+[177]  (drawings: 1)
+[178]  (drawings: 1)
+[179]  (drawings: 1)
+[180]  (drawings: 1)
+[181] Tabla A. Tamaño del efecto para las pruebas de una muestra. (drawings: 1)
+[182] Solo en stars la diferencia respecto al valor de referencia corresponde a un efecto grande (d = 0.90); en forks y open_issues el efecto es pequeño (d ≈ 0.24–0.26) pese a la alta significancia estadística. Es decir, el promedio de repositorios supera con claridad el umbral de popularidad de 5000 estrellas, pero su ventaja sobre 1000 forks o 100 issues abiertos, aunque real, es más modesta en términos prácticos. (drawings: 1)
+[183]  (drawings: 1)
+[184] Comparación de promedios entre grupos independientes (drawings: 2)
+[185] Organization vs. User (drawings: 1)
+[186] Se analiza si existen diferencias significativas en las variables cuantitativas según el tipo de propietario del repositorio (Organization: n = 878; User: n = 689). H₀: μ₁ = μ₂; H₁: μ₁ ≠ μ₂ (α = 0.05). (drawings: 1)
+[187]  (drawings: 1)
+[188] Tabla 10. Estadísticos descriptivos por grupo — Organization vs. User. (drawings: 2)
+[189]  (drawings: 1)
+[190] Tabla 11. Pruebas de hipótesis — Organization vs. User. (drawings: 1)
+[191]  (drawings: 1)
+[192]  (drawings: 1)
+[193] Interpretación: existen diferencias significativas en Stars y Open Issues, siendo los repositorios de organizaciones superiores en promedio frente a los de usuarios individuales. No se evidencian diferencias significativas para Forks y Size (KB). (drawings: 1)
+[194] Tamaño del efecto (Organization vs. User) (drawings: 1)
+[195]  (drawings: 1)
+[196]  (drawings: 1)
+[197] Tabla B. Tamaño del efecto — Organization vs. User. (drawings: 1)
+[198] Aunque Stars y Open Issues resultaron estadísticamente significativas (Tabla 11), sus tamaños del efecto son pequeños (g de Hedges entre 0.15 y 0.39): el tipo de propietario explica una diferencia real pero modesta en la popularidad y actividad de los repositorios, no una brecha grande. Esto es coherente con un n grande (878 y 689), que otorga alta potencia estadística incluso para detectar diferencias de magnitud reducida; forks y size_kb, sin diferencia significativa, muestran además efectos prácticamente nulos (g ≈ 0.02–0.03). (drawings: 1)
+[199]  (drawings: 1)
+[200]  (drawings: 1)
+[201] Gráficos comparativos (Organization vs. User) (drawings: 1)
+[202]  (drawings: 1)
+[203]  (drawings: 2)
+[204] Figura 1. Promedio de stars por tipo de propietario. (drawings: 2)
+[205]  (drawings: 1)
+[206]  (drawings: 1)
+[207]  (drawings: 2)
+[208] Figura 2. Promedio de forks por tipo de propietario. (drawings: 1)
+[209]  (drawings: 1)
+[210]  (drawings: 2)
+[211] Figura 3. Promedio de open_issues por tipo de propietario. (drawings: 1)
+[212]  (drawings: 1)
+[213]  (drawings: 1)
+[214]  (drawings: 2)
+[215] Figura 4. Promedio de size_kb por tipo de propietario. (drawings: 2)
+[216] 6.2 Licencia MIT vs. Apache-2.0 (drawings: 1)
+[217] Se analiza si existen diferencias significativas según el tipo de licencia (MIT: n = 546; Apache-2.0: n = 405). H₀: μ₁ = μ₂; H₁: μ₁ ≠ μ₂ (α = 0.05). (drawings: 1)
+[218]  (drawings: 1)
+[219] Tabla 12. Estadísticos descriptivos por grupo — MIT vs. Apache-2.0. (drawings: 2)
+[220] Tabla 13. Pruebas de hipótesis — MIT vs. Apache-2.0. (drawings: 2)
+[221]  (drawings: 1)
+[222] Interpretación: únicamente Open Issues muestra una diferencia significativa, siendo superior en promedio para los repositorios con licencia Apache-2.0. Las demás variables no mostraron diferencias estadísticamente significativas. (drawings: 1)
+[223]  (drawings: 1)
+[224] Tamaño del efecto (MIT vs. Apache-2.0) (drawings: 2)
+[225]  (drawings: 1)
+[226]  (drawings: 1)
+[227] Tabla C. Tamaño del efecto — MIT vs. Apache-2.0. (drawings: 1)
+[228] La única diferencia significativa (Open Issues) corresponde también a un efecto pequeño (g = −0.25): los repositorios con licencia Apache-2.0 acumulan, en promedio, más issues abiertos que los de licencia MIT, pero la magnitud de esa diferencia es modesta. A diferencia del tipo de propietario, el tipo de licencia no se perfila como un factor con influencia práctica relevante sobre la popularidad o actividad de mantenimiento de los repositorios. (drawings: 1)
+[229]  (drawings: 1)
+[230]  (drawings: 1)
+[231] Gráficos comparativos (MIT vs. Apache-2.0) (drawings: 2)
+[232]  (drawings: 1)
+[233]  (drawings: 2)
+[234] Figura 5. Promedio de stars por licencia. (drawings: 1)
+[235]  (drawings: 1)
+[236]  (drawings: 1)
+[237]  (drawings: 2)
+[238] Figura 6. Promedio de forks por licencia. (drawings: 2)
+[239]  (drawings: 1)
+[240]  (drawings: 1)
+[241]  (drawings: 1)
+[242]  (drawings: 2)
+[243] Figura 7. Promedio de open_issues por licencia. (drawings: 2)
+[244]  (drawings: 1)
+[245]  (drawings: 1)
+[246]  (drawings: 2)
+[247] Figura 8. Promedio de size_kb por licencia. (drawings: 2)
+[248]  (drawings: 1)
+[249] Significancia estadística vs. significancia práctica (drawings: 2)
+[250] El análisis de tamaño del efecto realizado en las secciones anteriores permite matizar los resultados de las pruebas de hipótesis. Con n = 1567 (y subgrupos de 405 a 878 casos), el estudio tiene potencia estadística suficiente para detectar como “significativas” diferencias que, en términos prácticos, son pequeñas. Esto se observa en forks y open_issues frente a sus valores de referencia (d ≈ 0.24–0.26) y en casi todas las comparaciones entre grupos (g entre 0.02 y 0.39): solo stars frente al umbral de 5000 (d = 0.90) constituye un efecto grande. La lectura recomendada es priorizar el tamaño del efecto sobre el p-valor al comunicar conclusiones a públicos no técnicos, reservando el término “diferencia significativa” para los casos en que además exista una magnitud relevante del efecto. (drawings: 2)
+[251]  (drawings: 1)
+[252] Limitaciones (drawings: 1)
+[253] El incumplimiento generalizado de normalidad (Tablas 4–6) obliga a apoyarse en el Teorema del Límite Central; con muestras más pequeñas, los resultados de las pruebas t serían menos confiables. (drawings: 1)
+[254] La fuerte asimetría y presencia de valores extremos (curtosis > 300 en size_kb) sugieren que la media puede no ser el estadístico más representativo; un análisis complementario con medianas o pruebas no paramétricas (p. ej., U de Mann-Whitney) sobre los datos originales fortalecería las conclusiones. (drawings: 1)
+[255] El filtrado de 66 641 a 1567 registros no se documenta en detalle en el informe; conviene precisar los criterios de exclusión aplicados para evaluar la representatividad de la muestra final. (drawings: 1)
+[256]  (drawings: 1)
+[257]  (drawings: 1)
+[258]  (drawings: 1)
+[259]  (drawings: 1)
+[260]  (drawings: 1)
+[261]  (drawings: 1)
+[262] Conclusiones (drawings: 1)
+[263] Interpretación: en los tres casos se rechaza H₀ (p < 0.01). El promedio real de stars (8963.88) es significativamente superior a 5000; el de forks (1318.58) supera significativamente las 1000 bifurcaciones; y el de open_issues (179.91) es significativamente superior a 100 incidencias abiertas. (drawings: 1)
+[264] Q1 y Q2: el promedio de stars (8963.88) es significativamente distinto —y superior— a 5000, y el promedio de forks (1318.58) supera significativamente las 1000 bifurcaciones (p < 0.01 en ambos casos). (drawings: 1)
+[265] Q3: el promedio de open_issues (179.91) es significativamente distinto —y superior— a 100 (p < 0.01). (drawings: 1)
+[266] Q4: entre Organization y User existen diferencias significativas en stars y open_issues (las organizaciones muestran promedios más altos en ambas), pero no en forks ni en size_kb. (drawings: 1)
+[267] Q5: entre licencias MIT y Apache-2.0, la única diferencia significativa está en open_issues (mayor en Apache-2.0); stars, forks y size_kb no difieren significativamente según la licencia. (drawings: 1)
+[268] Ninguna variable cumple el supuesto de normalidad, pero el tamaño muestral permitió aplicar pruebas t apoyadas en el Teorema del Límite Central; la homogeneidad de varianzas (Levene) determinó, variable por variable, el uso de t de Student o t de Welch. (drawings: 1)
+[269] En conjunto, el tipo de propietario (Organization vs. User) resulta un factor con mayor poder explicativo sobre popularidad y actividad de mantenimiento que el tipo de licencia (MIT vs. Apache-2.0). (drawings: 1)
+[270]  (drawings: 1)
+[271] Referencias y fuente de datos (drawings: 1)
+[272] Dataset: GitHub Repositories – Heterogeneous Data. Kaggle Datasets. https://www.kaggle.com/datasets (drawings: 1)
+[273]  (drawings: 1)
+[274] Triola, M. F. (2018). Estadística (12.ª ed.). Pearson Educación. (drawings: 1)
+[275]  (drawings: 1)
+[276] Documentación oficial de SciPy Stats (scipy.stats): pruebas t, Shapiro-Wilk y Levene. https://docs.scipy.org/doc/scipy/reference/stats.html (drawings: 1)
+[277]  (drawings: 1)
+
+Tables count: 16
+--- Table 0 (9 rows x 6 cols) ---
+  R0: ['Estadístico', 'Stars', 'Forks', 'Watchers', 'Open Issues', 'Size (KB)']
+  R1: ['N', '1567', '1567', '1567', '1567', '1567']
+  R2: ['Media', '8963.88', '1318.58', '8963.88', '179.91', '136916.26']
+  R3: ['Desv. estándar', '4411.51', '1211.51', '4411.51', '337.52', '769547.30']
+  R4: ['Mínimo', '4001', '8', '4001', '0', '3']
+--- Table 1 (3 rows x 5 cols) ---
+  R0: ['Variable', 'Stars', 'Forks', 'Open Issues', 'Size (KB)']
+  R1: ['Asimetría', '0.60', '4.74', '6.71', '16.94']
+  R2: ['Curtosis', '-0.66', '48.69', '76.95', '373.41']
+--- Table 2 (4 rows x 5 cols) ---
+  R0: ['Variable', 'Media', 'Error estándar', 'Margen de error', 'IC 95 %']
+  R1: ['Stars', '8963.88', '111.44', '218.59', '[8745.29 ; 9182.48]']
+  R2: ['Forks', '1318.58', '30.60', '60.03', '[1258.55 ; 1378.61]']
+  R3: ['Open Issues', '179.91', '8.53', '16.72', '[163.18 ; 196.63]']
+--- Table 3 (5 rows x 4 cols) ---
+  R0: ['Variable', 'Estadístico W', 'Valor p', '¿Normal?']
+  R1: ['Stars', '0.8989', '< 0.0001', 'No']
+  R2: ['Forks', '0.6878', '< 0.0001', 'No']
+  R3: ['Open Issues', '0.4757', '< 0.0001', 'No']
+  R4: ['Size (KB)', '0.1316', '< 0.0001', 'No']
+--- Table 4 (7 rows x 6 cols) ---
+  R0: ['Variable', 'Grupo', 'N', 'Estadístico W', 'Valor p', '¿Normal?']
+  R1: ['Stars', 'Organization', '878', '0.9076', '< 0.0001', 'No']
+  R2: ['Stars', 'User', '689', '0.8861', '< 0.0001', 'No']
+  R3: ['Forks', 'Organization', '878', '0.8103', '< 0.0001', 'No']
+  R4: ['Forks', 'User', '689', '0.6040', '< 0.0001', 'No']
+--- Table 5 (7 rows x 6 cols) ---
+  R0: ['Variable', 'Grupo', 'N', 'Estadístico W', 'Valor p', '¿Normal?']
+  R1: ['Stars', 'MIT', '546', '0.8910', '< 0.0001', 'No']
+  R2: ['Stars', 'Apache-2.0', '405', '0.9080', '< 0.0001', 'No']
+  R3: ['Forks', 'MIT', '546', '0.6168', '< 0.0001', 'No']
+  R4: ['Forks', 'Apache-2.0', '405', '0.6438', '< 0.0001', 'No']
+--- Table 6 (5 rows x 5 cols) ---
+  R0: ['Variable', 'Estadístico de Levene', 'Valor p', '¿Varianzas homogéneas?', 'Prueba a usar']
+  R1: ['Stars', '3.8845', '0.0489', 'No', 't de Welch']
+  R2: ['Forks', '3.0677', '0.0801', 'Sí', 't de Student']
+  R3: ['Open Issues', '40.1906', '< 0.0001', 'No', 't de Welch']
+  R4: ['Size (KB)', '0.0664', '0.7968', 'Sí', 't de Student']
+--- Table 7 (5 rows x 5 cols) ---
+  R0: ['Variable', 'Estadístico de Levene', 'Valor p', '¿Varianzas homogéneas?', 'Prueba a usar']
+  R1: ['Stars', '0.2254', '0.6351', 'Sí', 't de Student']
+  R2: ['Forks', '0.7708', '0.3802', 'Sí', 't de Student']
+  R3: ['Open Issues', '8.5266', '0.0036', 'No', 't de Welch']
+  R4: ['Size (KB)', '0.0028', '0.9579', 'Sí', 't de Student']
+--- Table 8 (4 rows x 7 cols) ---
+  R0: ['Variable', 'Media', 'μ₀', 'Hipótesis', 't', 'Sig.', 'Decisión']
+  R1: ['Stars', '8963.88', '5000', 'H₁: μ ≠ 5000', '35.57', '< 0.01', 'Rechaza H₀']
+  R2: ['Forks', '1318.58', '1000', 'H₁: μ > 1000', '10.41', '< 0.01', 'Rechaza H₀']
+  R3: ['Open Issues', '179.91', '100', 'H₁: μ ≠ 100', '9.37', '< 0.01', 'Rechaza H₀']
+--- Table 9 (4 rows x 4 cols) ---
+  R0: ['Variable', 'Diferencia (Media − μ₀)', 'd de Cohen', 'Magnitud']
+  R1: ['Stars', '3963.88', '0.90', 'Grande']
+  R2: ['Forks', '318.58', '0.26', 'Pequeño']
+  R3: ['Open Issues', '79.91', '0.24', 'Pequeño']
+--- Table 10 (9 rows x 6 cols) ---
+  R0: ['Variable', 'Grupo', 'N', 'Media', 'Desv. Est.', 'Error Est. Media']
+  R1: ['Stars', 'Organization', '878', '9243.75', '4496.82', '151.76']
+  R2: ['Stars', 'User', '689', '8607.25', '4277.10', '162.94']
+  R3: ['Forks', 'Organization', '878', '1305.18', '1023.69', '34.55']
+  R4: ['Forks', 'User', '689', '1335.65', '1415.80', '53.94']
+--- Table 11 (5 rows x 6 cols) ---
+  R0: ['Variable', 'Prueba aplicada', 't', 'gl', 'Sig. (bilateral)', 'Decisión']
+  R1: ['Stars', 't de Welch', '2.859', 'aprox.', '< 0.01', 'Diferencia significativa']
+  R2: ['Forks', 't de Student', '-0.494', '1565', '0.621', 'No significativa']
+  R3: ['Open Issues', 't de Welch', '8.418', 'aprox.', '< 0.01', 'Diferencia significativa']
+  R4: ['Size (KB)', 't de Student', '0.413', '1565', '0.680', 'No significativa']
+--- Table 12 (5 rows x 5 cols) ---
+  R0: ['Variable', 'Dif. de medias', 'IC 95% de la diferencia', 'g de Hedges', 'Magnitud']
+  R1: ['Stars', '636.50', '[200.07 ; 1072.93]', '0.15', 'Trivial-pequeño']
+  R2: ['Open Issues', '130.53', '[100.14 ; 160.92]', '0.39', 'Pequeño-moderado']
+  R3: ['Forks', '−30.47', '— (no sig.)', '−0.03', 'Trivial']
+  R4: ['Size (KB)', '16181.02', '— (no sig.)', '0.02', 'Trivial']
+--- Table 13 (9 rows x 6 cols) ---
+  R0: ['Variable', 'Grupo', 'N', 'Media', 'Desv. Est.', 'Error Est. Media']
+  R1: ['Stars', 'MIT', '546', '8860.57', '4437.93', '189.93']
+  R2: ['Stars', 'Apache-2.0', '405', '9090.93', '4379.47', '217.62']
+  R3: ['Forks', 'MIT', '546', '1312.85', '1329.09', '56.88']
+  R4: ['Forks', 'Apache-2.0', '405', '1262.27', '1162.93', '57.79']
+--- Table 14 (5 rows x 6 cols) ---
+  R0: ['Variable', 'Prueba aplicada', 't', 'gl', 'Sig. (bilateral)', 'Decisión']
+  R1: ['Stars', 't de Student', '-0.796', '949', '0.426', 'No significativa']
+  R2: ['Forks', 't de Student', '0.612', '949', '0.541', 'No significativa']
+  R3: ['Open Issues', 't de Welch', '-3.802', 'aprox.', '< 0.01', 'Diferencia significativa']
+  R4: ['Size (KB)', 't de Student', '-0.310', '949', '0.757', 'No significativa']
+--- Table 15 (5 rows x 5 cols) ---
+  R0: ['Variable', 'Dif. de medias (MIT−Apache)', 'IC 95% de la diferencia', 'g de Hedges', 'Magnitud']
+  R1: ['Open Issues', '−71.36', '[−108.15 ; −34.57]', '−0.25', 'Pequeño']
+  R2: ['Stars', '−230.36', '— (no sig.)', '−0.05', 'Trivial']
+  R3: ['Forks', '50.58', '— (no sig.)', '0.04', 'Trivial']
+  R4: ['Size (KB)', '−7097.22', '— (no sig.)', '−0.02', 'Trivial']
+=================== trabajo.docx ===================
+[0] Prueba de hipótesis para un promedio. (drawings: 1)
+[1]  (drawings: 2)
+[2]  (drawings: 2)
+[3]  (drawings: 2)
+[4]  (drawings: 2)
+[5]  (drawings: 2)
+[6]  (drawings: 2)
+[7]  (drawings: 1)
+[8] Comparación de promedios entre dos grupos independientes. (drawings: 1)
+[9]  (drawings: 1)
+[10]  (drawings: 2)
+[11]  (drawings: 2)
+[12]  (drawings: 2)
+[13]  (drawings: 2)
+[14]  (drawings: 1)
+[15]  (drawings: 1)
+[16]  (drawings: 1)
+[17]  (drawings: 1)
+[18] Comparación de promedios de muestras relacionadas (antes–después). (drawings: 1)
+[19]  (drawings: 1)
+[20]  (drawings: 2)
+[21]  (drawings: 2)
+[22]  (drawings: 1)
+[23] Análisis de Varianza (ANOVA) para tres o más grupos independientes. (drawings: 1)
+[24]  (drawings: 1)
+[25]  (drawings: 2)
+[26]  (drawings: 2)
+[27]  (drawings: 1)
+[28] Pruebas Post Hoc: Tukey o Games-Howell, según corresponda. (drawings: 1)
+[29]  (drawings: 1)
+[30]  (drawings: 1)
+[31]  (drawings: 2)
+[32]  (drawings: 2)
+
+Tables count: 0
+=================== Ejerc_prueba ANOVA.docx ===================
+[0] EJERCICIOS PRUEBAS DE ANOVA (drawings: 7)
+[2] APELLIDOS Y NOMBRE:………………………………………………………………………………………………………….. CURSO:………………………………………………………………………………………………………………………………….. (drawings: 7)
+[4] Objetivo (drawings: 1)
+[5] Aplicar el análisis de varianza (ANOVA) de un factor para comparar los promedios de tres o más grupos independientes, mediante la formulación de hipótesis, la verificación de los supuestos de normalidad y homogeneidad de varianzas, la aplicación de la prueba ANOVA y la interpretación de los resultados en problemas relacionados con Ingeniería de Sistemas. (drawings: 1)
+[6] Indicaciones (drawings: 1)
+[7] Desarrolle cada ejercicio utilizando el ANOVA de un factor para muestras independientes. Considere un nivel de significancia de α = 0,05 y realice el análisis estadístico correspondiente. (drawings: 29)
+[8] Para cada ejercicio: (drawings: 5)
+[9] Formule las hipótesis: (drawings: 5)
+[10] H₀: los promedios de todos los grupos son iguales. (drawings: 17)
+[11] H₁: al menos uno de los promedios es diferente. (drawings: 16)
+[12] Calcule la media y desviación estándar de cada grupo. (drawings: 17)
+[13] Verifique el supuesto de normalidad mediante la prueba de Shapiro–Wilk para cada grupo. (drawings: 25)
+[14] Verifique el supuesto de homogeneidad de varianzas mediante la prueba de Levene. (drawings: 23)
+[15] Aplique el ANOVA de un factor y determine el estadístico F, los grados de libertad y el p-valor. (drawings: 36)
+[16] Tome la decisión estadística considerando la regla: (drawings: 13)
+[17] p-valor ≥ α → H₀ (drawings: 9)
+[18] p-valor < α → H₁ (drawings: 9)
+[19] Si el ANOVA presenta diferencias estadísticamente significativas, aplique una prueba post hoc para determinar entre qué grupos se encuentran las diferencias. (drawings: 1)
+[20] Redacte la conclusión e interprete los resultados en el contexto del problema. (drawings: 23)
+[21] Importante: el ANOVA permite determinar si existen diferencias significativas entre los promedios de los grupos, pero no identifica directamente entre qué grupos se presentan dichas diferencias. Cuando p-valor < 0,05, deberá complementarse el análisis con una prueba post hoc. Si se cumple la homogeneidad de varianzas, puede utilizarse Tukey; si no se cumple, conviene utilizar Welch como alternativa al ANOVA clásico y Games-Howell para las comparaciones posteriores. (drawings: 59)
+[22]  (drawings: 1)
+[24] Se quiere evaluar el rendimiento de tres servidores web diferentes en términos de tiempo de respuesta a las solicitudes de los usuarios. Para ello, se registraron los tiempos de respuesta de solicitudes para cada servidor. (drawings: 21)
+[25] Los tiempos (en milisegundos) para el Servidor 1 fueron: (drawings: 17)
+[26] 120, 125, 130, 118, 122, 128, 123, 127, 129, 124, 121, 126, 132, 119, 133, 131, 123, 126, 120, 128. (drawings: 39)
+[27] Los tiempos para el Servidor 2 fueron: (drawings: 13)
+[28] 110, 115, 118, 112, 108, 113, 117, 114, 119, 111, 116, 112, 119, 110, 115, 117, 113, 112, 118, 114. (drawings: 39)
+[29] Los tiempos para el Servidor 3 fueron: (drawings: 13)
+[30] 105, 108, 112, 106, 110, 107, 113, 109, 111, 108, 112, 107, 113, 109, 111, 108, 112, 107, 113, 109. (drawings: 39)
+[31] Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en los tiempos de respuesta entre los tres servidores. (drawings: 1)
+[32] Se desea comparar el rendimiento de cuatro algoritmos de compresión de archivos diferentes en términos de la tasa de compresión alcanzada. Para ello, se comprimió una muestra de 25 archivos con cada algoritmo y se registró la tasa de compresión obtenida. (drawings: 1)
+[33] Las tasas de compresión para el Algoritmo 1 fueron: 60.3%, 59.8%, 60.5%, 59.9%, 60.2%, 59.7%, (drawings: 29)
+[34] 60.4%, 59.8%, 60.1%, 59.6%, 60.3%, 59.7%, 60.0%, 59.9%, 60.2%. (drawings: 17)
+[35] Las tasas para el Algoritmo 2 fueron: 61.2%, 61.6%, 61.0%, 61.3%, 61.5%, 61.1%, 61.4%, 61.7%, (drawings: 29)
+[36] 61.2%, 61.6%, 61.0%, 61.3%, 61.5%, 61.1%, 61.4%. (drawings: 13)
+[37] Las tasas para el Algoritmo 3 fueron: 59.5%, 59.9%, 60.1%, 59.7%, 60.0%, 59.6%, 59.8%, 60.2%, (drawings: 29)
+[38] 59.5%, 59.9%, 60.1%, 59.7%, 60.0%, 59.6%, 59.8%. Las tasas para el Algoritmo 4 fueron: 60.8%, (drawings: 29)
+[39] 61.1%, 60.5%, 61.0%, 60.9%, 61.2%, 60.7%, 61.3%, 60.8%, 61.1%, 60.5%, 61.0%, 60.9%, 61.2%, 60.7%. (drawings: 27)
+[40] Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en las tasas de compresión entre los cuatro algoritmos. (drawings: 1)
+[41] Se quiere evaluar el rendimiento de tres sistemas de almacenamiento en la nube diferentes en términos de velocidad de acceso a los archivos. Se registraron los tiempos de acceso (en milisegundos) para una muestra de 30 archivos en cada sistema. (drawings: 31)
+[42] Los tiempos para el Sistema 1 fueron: 15, 16, 14, 17, 15, 16, 16, 17, 14, 15, 16, 14, 17, 15, 16, 16, 17, (drawings: 47)
+[43] 14, 15, 16, 14, 17, 15, 16, 16, 17, 14, 15, 16, 14. (drawings: 25)
+[44] Los tiempos para el Sistema 2 fueron: 13, 14, 12, 15, 13, 14, 14, 15, 12, 13, 14, 12, 15, 13, 14, 14, 15, (drawings: 47)
+[45] 12, 13, 14, 12, 15, 13, 14, 14, 15, 12, 13, 14, 12. (drawings: 25)
+[46] Los tiempos para el Sistema 3 fueron: 16, 17, 15, 18, 16, 17, 17, 18, 15, 16, 17, 15, 18, 16, 17, 17, 18, (drawings: 47)
+[47] 15, 16, 17, 15, 18, 16, 17, 17, 18, 15, 16, 17, 15. (drawings: 25)
+[48] Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en los tiempos de acceso entre los tres sistemas de almacenamiento en la nube. (drawings: 31)
+[49] Se desea evaluar la efectividad de tres métodos de encriptación diferentes en términos de la seguridad de la comunicación de datos. Se registraron los niveles de seguridad (en porcentaje) para una muestra de 25 transmisiones de datos en cada método. (drawings: 1)
+[50] Los niveles para el Método 1 fueron: 98.5%, 98.2%, 98.7%, 98.3%, 98.6%, 98.4%, 98.8%, 98.2%, (drawings: 29)
+[51] 98.7%, 98.5%, 98.3%, 98.6%, 98.4%, 98.9%, 98.2%, 98.6%, 98.4%, 98.7%, 98.3%, 98.5%, 98.1%, 98.6%, (drawings: 27)
+[52] 98.4%, 98.8%, 98.3%. (drawings: 5)
+[54] Los niveles para el Método 2 fueron: 97.9%, 97.6%, 98.0%, 97.7%, 98.2%, 97.8%, 98.1%, 97.6%, (drawings: 29)
+[55] 98.0%, 97.8%, 98.3%, 97.9%, 98.1%, 97.7%, 98.0%, 97.6%, 98.0%, 97.8%, 98.2%, 97.9%, 98.1%, 97.7%, (drawings: 27)
+[56] 98.0%, 97.6%, 98.0%. (drawings: 5)
+[57] Los niveles para el Método 3 fueron: 98.2%, 98.0%, 98.3%, 98.1%, 98.4%, 98.2%, 98.5%, 98.3%, (drawings: 29)
+[58] 98.2%, 98.0%, 98.3%, 98.1%, 98.4%, 98.2%, 98.5%, 98.3%, 98.2%, 98.0%, 98.3%, 98.1%, 98.4%, 98.2%, (drawings: 27)
+[59] 98.5%, 98.3%, 98.2%. (drawings: 5)
+[60] Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en los niveles de seguridad entre los tres métodos de encriptación. (drawings: 1)
+[61] Se quiere comparar el rendimiento de cuatro métodos diferentes de procesamiento de señales en términos de precisión. Para ello, se realizaron mediciones de precisión para una muestra de 20 señales procesadas con cada método. (drawings: 1)
+[62] Las precisiones para el Método 1 fueron: 90.5%, 91.2%, 89.8%, 90.9%, 90.3%, 91.0%, 89.7%, 90.8%, (drawings: 20)
+[63] 90.1%, 91.5%, 90.6%, 91.3%, 89.9%, 90.7%, 90.4%, 91.1%, 89.6%, 90.2%, 91.4%, 90.0%. (drawings: 23)
+[64] Las precisiones para el Método 2 fueron: 91.8%, 92.4%, 91.2%, 91.5%, 92.0%, 91.3%, 91.9%, 92.5%, (drawings: 20)
+[65] 91.7%, 91.1%, 91.6%, 92.1%, 91.4%, 91.8%, 92.3%, 91.0%, 91.3%, 91.7%, 92.2%, 91.6%. (drawings: 23)
+[66] Las precisiones para el Método 3 fueron: 89.2%, 89.8%, 88.5%, 88.9%, 89.6%, 88.3%, 88.8%, 89.3%, (drawings: 20)
+[67] 88.7%, 89.4%, 89.0%, 89.7%, 88.6%, 89.1%, 89.5%, 88.4%, 88.7%, 89.2%, 88.8%, 89.3%. (drawings: 23)
+[68] Las precisiones para el Método 4 fueron: 93.1%, 93.8%, 92.5%, 92.9%, 93.6%, 92.3%, 92.8%, 93.3%, (drawings: 20)
+[69] 92.7%, 93.4%, 93.0%, 93.7%, 92.6%, 93.1%, 93.5%, 92.4%, 92.8%, 93.2%, 92.9%, 93.4%. (drawings: 23)
+[70] Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en la precisión entre los cuatro métodos de procesamiento de señales. (drawings: 31)
+[72] &&&&&&&&&&&& (drawings: 1)
+
+Tables count: 0

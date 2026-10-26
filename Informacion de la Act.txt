@@ -1,0 +1,266 @@
+TRABAJO COMPLEMENTARIO DE ESTADÍSTICA INFERENCIAL
+Fecha de presentación: sábado 10 de octubre de 2026
+Modalidad: Grupal – 3 estudiantes por grupo
+
+Objetivo
+Aplicar los conceptos y procedimientos de estadística inferencial desarrollados en el curso, mediante el análisis de un conjunto de datos real, relacionado preferentemente con tecnología o Ingeniería de Sistemas, formulando preguntas de investigación, seleccionando las pruebas estadísticas correspondientes e interpretando adecuadamente los resultados obtenidos.
+
+Indicaciones generales
+Cada grupo estará conformado por tres estudiantes y deberá seleccionar un dataset de Kaggle Datasets u otro repositorio de datos reconocido.
+
+El dataset deberá contener variables que permitan desarrollar los análisis estadísticos solicitados. No es necesario utilizar todas las variables del dataset; cada grupo deberá seleccionar aquellas que resulten pertinentes para responder sus preguntas de investigación.
+
+A partir del dataset seleccionado, deberán formular preguntas de investigación y desarrollar los siguientes procedimientos:
+
+1. Estimación y verificación de supuestos
+Estimación puntual.
+
+Intervalos de confianza.
+
+Distribución normal.
+
+Pruebas de normalidad mediante Shapiro–Wilk.
+
+Evaluación de homogeneidad de varianzas.
+
+Prueba de Levene, cuando corresponda.
+
+2. Pruebas de hipótesis
+Prueba de hipótesis para un promedio.
+
+Comparación de promedios entre dos grupos independientes.
+
+Comparación de promedios de muestras relacionadas (antes–después).
+
+Análisis de Varianza (ANOVA) para tres o más grupos independientes.
+
+Pruebas Post Hoc: Tukey o Games-Howell, según corresponda.
+
+En cada procedimiento se deberá:
+
+Formular la hipótesis nula (H₀) y la hipótesis alterna (H₁).
+
+Establecer el nivel de significancia α = 0,05.
+
+Verificar los supuestos correspondientes.
+
+Seleccionar y justificar la prueba estadística utilizada.
+
+Presentar los resultados obtenidos.
+
+Tomar una decisión utilizando el p-valor:
+
+p-valor ≥ 0,05 → H₀
+
+p-valor < 0,05 → H₁
+
+Interpretar el resultado estadístico en el contexto del problema analizado.
+
+Estructura del informe
+1. Descripción del dataset
+Presentar:
+
+Nombre del dataset.
+
+Fuente y enlace de acceso.
+
+Área o temática.
+
+Número de registros y variables.
+
+Descripción de las variables seleccionadas para el trabajo.
+
+Tipo de cada variable utilizada: cuantitativa o cualitativa.
+
+2. Planteamiento del análisis
+Describir brevemente el problema o situación que se desea analizar y formular las preguntas de investigación que serán respondidas mediante las pruebas estadísticas.
+
+Identificar las variables involucradas en cada análisis y justificar su selección.
+
+3. Análisis descriptivo y estimación
+Presentar los estadísticos descriptivos pertinentes para las variables seleccionadas, considerando, según corresponda:
+
+Tamaño de muestra.
+
+Media.
+
+Desviación estándar.
+
+Valores mínimo y máximo.
+
+Estimación puntual.
+
+Intervalos de confianza.
+
+Los resultados deberán estar acompañados de su correspondiente interpretación.
+
+4. Verificación de supuestos
+Evaluar los supuestos requeridos para las pruebas estadísticas que serán aplicadas.
+
+Considerar principalmente:
+
+Normalidad mediante Shapiro–Wilk.
+
+Homogeneidad de varianzas mediante Levene, cuando corresponda.
+
+No deberán limitarse a presentar las tablas generadas por el software. Se deberá explicar qué supuesto se está evaluando, cuál es el resultado y qué decisión se adopta a partir del p-valor.
+
+5. Prueba de hipótesis para una muestra
+Seleccionar una variable cuantitativa y establecer un valor de referencia con el cual comparar su promedio.
+
+Desarrollar:
+
+Pregunta de investigación.
+
+H₀ y H₁.
+
+Nivel de significancia.
+
+Verificación de normalidad.
+
+Prueba estadística utilizada.
+
+Resultado y p-valor.
+
+Decisión estadística.
+
+Interpretación en el contexto del problema.
+
+6. Comparación de promedios entre dos grupos independientes
+Seleccionar una variable cuantitativa y una variable de agrupación con dos categorías.
+
+Desarrollar:
+
+Pregunta de investigación.
+
+Definición de los dos grupos.
+
+H₀ y H₁.
+
+Normalidad de la variable cuantitativa en cada grupo.
+
+Prueba de Levene.
+
+Selección de t de Student o t de Welch, según corresponda.
+
+Resultado y p-valor.
+
+Decisión estadística.
+
+Interpretación del resultado.
+
+7. Comparación de promedios en muestras relacionadas
+Seleccionar dos mediciones realizadas sobre las mismas unidades de análisis, por ejemplo: antes–después, pretest–postest, tiempo 1–tiempo 2 o dos mediciones relacionadas.
+
+Desarrollar:
+
+Pregunta de investigación.
+
+Identificación y justificación del emparejamiento de los datos.
+
+H₀ y H₁.
+
+Cálculo de las diferencias entre las mediciones.
+
+Verificación de la normalidad de las diferencias mediante Shapiro–Wilk.
+
+Aplicación de la prueba t para muestras relacionadas cuando corresponda.
+
+Resultado y p-valor.
+
+Decisión estadística.
+
+Interpretación del resultado en el contexto del problema.
+
+Importante: No es suficiente que el dataset contenga dos variables cuantitativas. Debe existir una razón metodológica que permita afirmar que ambas mediciones corresponden a las mismas unidades de análisis.
+
+8. Análisis de Varianza (ANOVA)
+Seleccionar una variable cuantitativa y una variable categórica con tres o más grupos independientes.
+
+Desarrollar:
+
+Pregunta de investigación.
+
+Identificación de la variable dependiente y del factor o variable de agrupación.
+
+H₀: los promedios de los grupos son iguales.
+
+H₁: al menos un promedio es diferente.
+
+Estadísticos descriptivos por grupo.
+
+Normalidad por grupo mediante Shapiro–Wilk.
+
+Homogeneidad de varianzas mediante Levene.
+
+Aplicación del ANOVA.
+
+Presentación del estadístico F y p-valor.
+
+Decisión estadística.
+
+Interpretación del resultado.
+
+Cuando el ANOVA determine la existencia de diferencias estadísticamente significativas, se deberá continuar con las pruebas Post Hoc.
+
+9. Pruebas Post Hoc
+Si el análisis anterior presenta diferencias estadísticamente significativas, identificar entre qué grupos se encuentran dichas diferencias.
+
+Seleccionar la prueba Post Hoc considerando el resultado de Levene:
+
+Varianzas homogéneas → Tukey.
+
+Varianzas no homogéneas → Games-Howell.
+
+Presentar:
+
+Prueba Post Hoc seleccionada y justificación.
+
+Comparaciones entre grupos.
+
+Diferencia de medias.
+
+p-valor de cada comparación.
+
+Identificación de las comparaciones estadísticamente significativas.
+
+Interpretación de los resultados.
+
+No será suficiente señalar que “existen diferencias”; deberán indicar qué grupos presentan diferencias significativas y explicar qué significa el resultado en el contexto de los datos analizados.
+
+10. Conclusiones
+Las conclusiones deberán responder directamente a las preguntas de investigación formuladas y estar sustentadas en los resultados estadísticos obtenidos.
+
+No deberán limitarse a repetir los valores de las tablas. Se deberá explicar qué se puede concluir sobre el problema analizado a partir de la evidencia estadística.
+
+11. Referencias y fuente de datos
+Incluir:
+
+Fuente original del dataset.
+
+Enlace de acceso.
+
+Referencias adicionales utilizadas para sustentar el análisis, cuando corresponda.
+
+Consideraciones importantes
+El trabajo no deberá consistir únicamente en capturas de SPSS, Excel u otro software estadístico.
+
+Cada resultado deberá estar acompañado de una explicación que permita identificar:
+
+¿Qué se evaluó? → ¿Por qué se utilizó esa prueba? → ¿Cuál fue el resultado? → ¿Qué decisión se tomó? → ¿Qué significa el resultado en el contexto del problema?
+
+Requisitos mínimos del dataset
+Antes de seleccionar definitivamente el dataset, el grupo deberá verificar que permita identificar:
+
+Una variable cuantitativa para realizar la prueba de hipótesis de una muestra.
+
+Una variable cuantitativa y una variable categórica con dos grupos independientes para comparar dos promedios.
+
+Dos mediciones cuantitativas relacionadas correspondientes a las mismas unidades de análisis para aplicar la prueba de muestras relacionadas.
+
+Una variable cuantitativa y una variable categórica con tres o más grupos independientes para desarrollar ANOVA y, cuando corresponda, las pruebas Post Hoc.
+
+El grupo deberá verificar estos requisitos antes de iniciar el trabajo. La selección de un dataset que no permita desarrollar los análisis solicitados será responsabilidad del grupo.
+
+Presentación de resultados
+Se valorará especialmente la capacidad del grupo para seleccionar correctamente la prueba estadística, justificar su utilización e interpretar los resultados, y no solamente la obtención de resultados mediante el software estadístico.

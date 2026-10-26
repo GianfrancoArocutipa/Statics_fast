@@ -1,0 +1,242 @@
+[0] UNIVERSIDAD PRIVADA DE TACNA
+[1] FACULTAD DE INGENIERÍA
+[2] ESCUELA DE INGENIERÍA DE SISTEMAS
+[4] Trabajo Práctico
+[6] “APLICACIÓN DE ESTADÍSTICA INFERENCIAL CON DATOS REALES”
+[10] Que se presenta para el curso:
+[11] APLICACIÓN DE ESTADÍSTICA INFERENCIAL CON DATOS REALES
+[14] Docente:
+[15] LUIS ALFREDO FERNANDEZ VIZCARRA
+[19] Arocutipa Arocutipa, Gian Franco  (2023076790)
+[21] Perez Peralta, Fabrizio Salvador Elias  (2023077476)
+[23] LLica Mamani, Jimmy Mijair  (2023076789)
+[27] TACNA – PERÚ
+[28] 2026
+[32] Índice General
+[65] Informe
+[67] Descripción del Proyecto
+[68] Nombre y fuente: “GitHub Repositories – Heterogeneous Data”, extraído de Kaggle Datasets (https://www.kaggle.com/datasets); repositorios de código abierto en Python.
+[69] Registros analizados: 1567 repositorios (de 66 641 registros brutos originales), comparados por tipo de propietario (Organization: 878 / User: 689) y por tipo de licencia (MIT: 546 / Apache-2.0: 405).
+[70] Variables cuantitativas: stars, forks, watchers, open_issues y size_kb.
+[71] Variables categóricas de agrupación: owner_type (Organization / User) y license_spdx_id (MIT / Apache-2.0).
+[72] Descripción de las variables seleccionadas para el análisis:
+[73] stars (cuantitativa discreta): número de estrellas recibidas por el repositorio; es el indicador principal de popularidad dentro de la comunidad.
+[74] forks (cuantitativa discreta): número de bifurcaciones (copias derivadas) del repositorio; refleja el grado de reutilización y colaboración.
+[75] open_issues (cuantitativa discreta): cantidad de incidencias (issues) abiertas; indicador del nivel de actividad y mantenimiento pendiente del proyecto.
+[76] watchers y size_kb (cuantitativas): variables descriptivas de apoyo — watchers coincide en este dataset con stars, y size_kb (tamaño del repositorio en KB) ayuda a caracterizar la magnitud del proyecto.
+[77] owner_type (cualitativa nominal, dos categorías): tipo de propietario del repositorio — Organization (878 repos) o User (689 repos). Define la comparación principal de dos grupos independientes.
+[78] license_spdx_id (cualitativa nominal, dos categorías consideradas): tipo de licencia — MIT (546 repos) o Apache-2.0 (405 repos). Define una comparación secundaria de dos grupos independientes.
+[80] Planteamiento del análisis
+[82] El ecosistema de código abierto en GitHub agrupa repositorios mantenidos tanto por organizaciones (empresas, comunidades, fundaciones) como por usuarios individuales, y distribuidos bajo distintos tipos de licencia de software. Se desea analizar si existen diferencias estadísticamente significativas en los indicadores de popularidad y actividad (estrellas, forks e issues abiertos) entre estos segmentos, y si dichos indicadores, tomados en conjunto, se ajustan o no a valores de referencia comúnmente utilizados para caracterizar un repositorio “popular” o “activo” en el lenguaje Python.
+[83] Preguntas de investigación:
+[84] Q1 (una muestra): ¿El promedio de estrellas (stars) de los repositorios Python de código abierto difiere de 5000?
+[85] Q2 (una muestra): ¿El promedio de forks de los repositorios supera 1000?
+[86] Q3 (una muestra): ¿El promedio de issues abiertos (open_issues) difiere de 100?
+[87] Q4 (dos grupos): ¿Existen diferencias significativas en stars, forks e issues abiertos entre repositorios de Organizaciones y de Usuarios individuales?
+[88] Q5 (dos grupos): ¿Existen diferencias significativas en stars, forks e issues abiertos entre repositorios con licencia MIT y Apache-2.0?
+[90] Variables involucradas: stars, forks y open_issues (variables dependientes cuantitativas); owner_type y license_spdx_id (variables independientes categóricas de dos niveles).
+[91] Justificación de la selección: stars, forks y open_issues son los indicadores más utilizados por la comunidad de desarrollo de software para medir popularidad, adopción y actividad de mantenimiento de un repositorio, por lo que resultan pertinentes tanto para una prueba de hipótesis sobre un promedio como para la comparación entre grupos independientes. owner_type y license_spdx_id constituyen criterios de segmentación naturales del dataset (tipo de propietario y tipo de licencia), lo que permite aplicar la secuencia completa de procedimientos exigida por el trabajo.
+[93] Análisis descriptivo y estimación
+[94] Estadísticos descriptivos generales
+[95] La tabla 1 presenta los estadísticos descriptivos para la muestra completa (n = 1567).
+[96] Tabla 1. Estadísticos descriptivos generales.
+[97] Tabla 2. Asimetría y curtosis.
+[101] Interpretación: en todas las variables la media supera a la mediana, evidenciando asimetría positiva (cola hacia la derecha). Esta asimetría es moderada en stars (0.60) y muy marcada en forks, open_issues y, en especial, size_kb (asimetría = 16.94; curtosis = 373.41), lo que indica la presencia de un pequeño grupo de repositorios con tamaño o actividad muy por encima del resto del dataset.
+[104] Estimación puntual
+[105] A partir de la muestra (n = 1567), las mejores estimaciones puntuales de los parámetros poblacionales son: media de stars = 8963.88 (varianza = 19 461 426.70; desviación estándar = 4411.51); media de forks = 1318.58 (varianza = 1 467 748.40; desviación estándar = 1211.51); media de open_issues = 179.91 (varianza = 113 922.21; desviación estándar = 337.52).
+[109] Intervalos de confianza (95 %)
+[110] Tabla 3. Intervalos de confianza al 95 % para la media (n = 1567).
+[112] Interpretación: con 95 % de confianza, el promedio poblacional de stars, forks y open_issues se ubica dentro de los intervalos anteriores; en los tres casos el valor de referencia planteado en la sección 2 (5000, 1000 y 100 respectivamente) queda fuera del intervalo, lo que anticipa el rechazo de H₀ en las pruebas de la sección 5.
+[114] Intervalo de confianza para una proporción: de los 1567 repositorios, 573 (36.57 %) tienen más de 10 000 estrellas — IC 95 % = [34.18 % ; 38.95 %] —, y 130 (8.30 %) superan los 500 issues abiertos. Con 95 % de confianza, entre un tercio y dos quintos de los repositorios Python de código abierto representados por el dataset alcanzan ese nivel de popularidad.
+[117] Verificación de supuestos
+[118] Para validar el uso de pruebas paramétricas (t de Student / t de Welch) se verificaron los supuestos de normalidad (Shapiro-Wilk, H₀: los datos siguen una distribución normal) y homogeneidad de varianzas (Levene, H₀: las varianzas de ambos grupos son iguales), con α = 0.05 en ambos casos.
+[120] Distribución normal en la inferencia
+[121] La distribución normal es el supuesto teórico sobre el que se apoyan la mayoría de los procedimientos paramétricos empleados en este trabajo (estimación por intervalos y pruebas t para una y dos muestras): estos métodos asumen que la distribución muestral de la media se comporta de forma aproximadamente normal, aunque la variable original no lo sea. En variables de conteo con fuerte asimetría positiva, como stars, forks y open_issues, la normalidad rara vez se cumple a nivel individual, como se confirma en las Tablas 4 a 6. Sin embargo, el Teorema del Límite Central garantiza que, para tamaños de muestra grandes (n ≥ 405 en todos los subgrupos analizados), la distribución muestral de la media se aproxima a una normal incluso cuando los datos originales están lejos de serlo, lo que respalda formalmente el uso de las pruebas t desarrolladas en las secciones 5 y 6.
+[133] Prueba de normalidad (Shapiro-Wilk)
+[134] Tabla 4. Shapiro-Wilk — muestra completa (n = 1567).
+[137] Tabla 5. Shapiro-Wilk por grupo — Organization vs. User.
+[144] Tabla 6. Shapiro-Wilk por grupo — MIT vs. Apache-2.0.
+[147] Interpretación: en todos los casos p < 0.05, por lo que se rechaza H₀ y ninguna variable sigue una distribución normal, ni de forma global ni por subgrupo. No obstante, dado el gran tamaño muestral (n > 400 en todos los subgrupos), el Teorema del Límite Central permite que la distribución muestral de la media se aproxime a la normal, lo que justifica el uso de las pruebas t en las secciones 5 y 6.
+[157] Homogeneidad de varianzas (prueba de Levene)
+[158] Tabla 7. Levene — Organization vs. User.
+[160] Tabla 8. Levene — MIT vs. Apache-2.0.
+[164] Interpretación: a diferencia de la normalidad, el resultado de Levene sí varía según la variable: en Organization vs. User no hay homogeneidad de varianzas en Stars y Open Issues (se usa t de Welch), mientras que en MIT vs. Apache-2.0 la única variable sin homogeneidad es Open Issues. Esta decisión se aplica de forma independiente para cada variable en la comparación de grupos de la sección 6.
+[166] Prueba de hipótesis para una muestra
+[168] Se contrastan los tres valores de referencia de las preguntas Q1-Q3 mediante la prueba t para una muestra (α = 0.05, n = 1567, gl = 1566).
+[169] Tabla 9. Pruebas t para una muestra.
+[173] Interpretación: en los tres casos se rechaza H₀ (p < 0.01). El promedio real de stars (8963.88) es significativamente superior a 5000; el de forks (1318.58) supera significativamente las 1000 bifurcaciones; y el de open_issues (179.91) es significativamente superior a 100 incidencias abiertas.
+[175] Tamaño del efecto (d de Cohen)
+[176] Con n = 1567, incluso diferencias pequeñas resultan estadísticamente significativas; por ello conviene complementar el p-valor con una medida del tamaño del efecto, calculada como d = (media − μ₀) / desviación estándar.
+[181] Tabla A. Tamaño del efecto para las pruebas de una muestra.
+[182] Solo en stars la diferencia respecto al valor de referencia corresponde a un efecto grande (d = 0.90); en forks y open_issues el efecto es pequeño (d ≈ 0.24–0.26) pese a la alta significancia estadística. Es decir, el promedio de repositorios supera con claridad el umbral de popularidad de 5000 estrellas, pero su ventaja sobre 1000 forks o 100 issues abiertos, aunque real, es más modesta en términos prácticos.
+[184] Comparación de promedios entre grupos independientes
+[185] Organization vs. User
+[186] Se analiza si existen diferencias significativas en las variables cuantitativas según el tipo de propietario del repositorio (Organization: n = 878; User: n = 689). H₀: μ₁ = μ₂; H₁: μ₁ ≠ μ₂ (α = 0.05).
+[188] Tabla 10. Estadísticos descriptivos por grupo — Organization vs. User.
+[190] Tabla 11. Pruebas de hipótesis — Organization vs. User.
+[193] Interpretación: existen diferencias significativas en Stars y Open Issues, siendo los repositorios de organizaciones superiores en promedio frente a los de usuarios individuales. No se evidencian diferencias significativas para Forks y Size (KB).
+[194] Tamaño del efecto (Organization vs. User)
+[197] Tabla B. Tamaño del efecto — Organization vs. User.
+[198] Aunque Stars y Open Issues resultaron estadísticamente significativas (Tabla 11), sus tamaños del efecto son pequeños (g de Hedges entre 0.15 y 0.39): el tipo de propietario explica una diferencia real pero modesta en la popularidad y actividad de los repositorios, no una brecha grande. Esto es coherente con un n grande (878 y 689), que otorga alta potencia estadística incluso para detectar diferencias de magnitud reducida; forks y size_kb, sin diferencia significativa, muestran además efectos prácticamente nulos (g ≈ 0.02–0.03).
+[201] Gráficos comparativos (Organization vs. User)
+[204] Figura 1. Promedio de stars por tipo de propietario. 
+[208] Figura 2. Promedio de forks por tipo de propietario.
+[211] Figura 3. Promedio de open_issues por tipo de propietario.
+[215] Figura 4. Promedio de size_kb por tipo de propietario.
+[216] 6.2 Licencia MIT vs. Apache-2.0
+[217] Se analiza si existen diferencias significativas según el tipo de licencia (MIT: n = 546; Apache-2.0: n = 405). H₀: μ₁ = μ₂; H₁: μ₁ ≠ μ₂ (α = 0.05).
+[219] Tabla 12. Estadísticos descriptivos por grupo — MIT vs. Apache-2.0.
+[220] Tabla 13. Pruebas de hipótesis — MIT vs. Apache-2.0.
+[222] Interpretación: únicamente Open Issues muestra una diferencia significativa, siendo superior en promedio para los repositorios con licencia Apache-2.0. Las demás variables no mostraron diferencias estadísticamente significativas.
+[224] Tamaño del efecto (MIT vs. Apache-2.0)
+[227] Tabla C. Tamaño del efecto — MIT vs. Apache-2.0.
+[228] La única diferencia significativa (Open Issues) corresponde también a un efecto pequeño (g = −0.25): los repositorios con licencia Apache-2.0 acumulan, en promedio, más issues abiertos que los de licencia MIT, pero la magnitud de esa diferencia es modesta. A diferencia del tipo de propietario, el tipo de licencia no se perfila como un factor con influencia práctica relevante sobre la popularidad o actividad de mantenimiento de los repositorios.
+[231] Gráficos comparativos (MIT vs. Apache-2.0)
+[234] Figura 5. Promedio de stars por licencia.
+[238] Figura 6. Promedio de forks por licencia.
+[243] Figura 7. Promedio de open_issues por licencia.
+[247] Figura 8. Promedio de size_kb por licencia.
+[249] Significancia estadística vs. significancia práctica
+[250] El análisis de tamaño del efecto realizado en las secciones anteriores permite matizar los resultados de las pruebas de hipótesis. Con n = 1567 (y subgrupos de 405 a 878 casos), el estudio tiene potencia estadística suficiente para detectar como “significativas” diferencias que, en términos prácticos, son pequeñas. Esto se observa en forks y open_issues frente a sus valores de referencia (d ≈ 0.24–0.26) y en casi todas las comparaciones entre grupos (g entre 0.02 y 0.39): solo stars frente al umbral de 5000 (d = 0.90) constituye un efecto grande. La lectura recomendada es priorizar el tamaño del efecto sobre el p-valor al comunicar conclusiones a públicos no técnicos, reservando el término “diferencia significativa” para los casos en que además exista una magnitud relevante del efecto.
+[252] Limitaciones
+[253] El incumplimiento generalizado de normalidad (Tablas 4–6) obliga a apoyarse en el Teorema del Límite Central; con muestras más pequeñas, los resultados de las pruebas t serían menos confiables.
+[254] La fuerte asimetría y presencia de valores extremos (curtosis > 300 en size_kb) sugieren que la media puede no ser el estadístico más representativo; un análisis complementario con medianas o pruebas no paramétricas (p. ej., U de Mann-Whitney) sobre los datos originales fortalecería las conclusiones.
+[255] El filtrado de 66 641 a 1567 registros no se documenta en detalle en el informe; conviene precisar los criterios de exclusión aplicados para evaluar la representatividad de la muestra final.
+[262] Conclusiones
+[263] Interpretación: en los tres casos se rechaza H₀ (p < 0.01). El promedio real de stars (8963.88) es significativamente superior a 5000; el de forks (1318.58) supera significativamente las 1000 bifurcaciones; y el de open_issues (179.91) es significativamente superior a 100 incidencias abiertas.
+[264] Q1 y Q2: el promedio de stars (8963.88) es significativamente distinto —y superior— a 5000, y el promedio de forks (1318.58) supera significativamente las 1000 bifurcaciones (p < 0.01 en ambos casos).
+[265] Q3: el promedio de open_issues (179.91) es significativamente distinto —y superior— a 100 (p < 0.01).
+[266] Q4: entre Organization y User existen diferencias significativas en stars y open_issues (las organizaciones muestran promedios más altos en ambas), pero no en forks ni en size_kb.
+[267] Q5: entre licencias MIT y Apache-2.0, la única diferencia significativa está en open_issues (mayor en Apache-2.0); stars, forks y size_kb no difieren significativamente según la licencia.
+[268] Ninguna variable cumple el supuesto de normalidad, pero el tamaño muestral permitió aplicar pruebas t apoyadas en el Teorema del Límite Central; la homogeneidad de varianzas (Levene) determinó, variable por variable, el uso de t de Student o t de Welch.
+[269] En conjunto, el tipo de propietario (Organization vs. User) resulta un factor con mayor poder explicativo sobre popularidad y actividad de mantenimiento que el tipo de licencia (MIT vs. Apache-2.0).
+[271] Referencias y fuente de datos
+[272] Dataset: GitHub Repositories – Heterogeneous Data. Kaggle Datasets. https://www.kaggle.com/datasets
+[274] Triola, M. F. (2018). Estadística (12.ª ed.). Pearson Educación.
+[276] Documentación oficial de SciPy Stats (scipy.stats): pruebas t, Shapiro-Wilk y Levene. https://docs.scipy.org/doc/scipy/reference/stats.html
+
+
+=== TABLES ===
+
+--- TABLE 0 ---
+Row 0: Estadístico | Stars | Forks | Watchers | Open Issues | Size (KB)
+Row 1: N | 1567 | 1567 | 1567 | 1567 | 1567
+Row 2: Media | 8963.88 | 1318.58 | 8963.88 | 179.91 | 136916.26
+Row 3: Desv. estándar | 4411.51 | 1211.51 | 4411.51 | 337.52 | 769547.30
+Row 4: Mínimo | 4001 | 8 | 4001 | 0 | 3
+Row 5: Q1 (25%) | 4591.50 | 592.50 | 4591.50 | 29.00 | 3486.00
+Row 6: Mediana | 8539 | 998 | 8539 | 78 | 16923
+Row 7: Q3 (75%) | 11960.00 | 1649.50 | 11960.00 | 186.00 | 71656.50
+Row 8: Máximo | 19931 | 19556 | 19931 | 5959 | 20737671
+
+--- TABLE 1 ---
+Row 0: Variable | Stars | Forks | Open Issues | Size (KB)
+Row 1: Asimetría | 0.60 | 4.74 | 6.71 | 16.94
+Row 2: Curtosis | -0.66 | 48.69 | 76.95 | 373.41
+
+--- TABLE 2 ---
+Row 0: Variable | Media | Error estándar | Margen de error | IC 95 %
+Row 1: Stars | 8963.88 | 111.44 | 218.59 | [8745.29 ; 9182.48]
+Row 2: Forks | 1318.58 | 30.60 | 60.03 | [1258.55 ; 1378.61]
+Row 3: Open Issues | 179.91 | 8.53 | 16.72 | [163.18 ; 196.63]
+
+--- TABLE 3 ---
+Row 0: Variable | Estadístico W | Valor p | ¿Normal?
+Row 1: Stars | 0.8989 | < 0.0001 | No
+Row 2: Forks | 0.6878 | < 0.0001 | No
+Row 3: Open Issues | 0.4757 | < 0.0001 | No
+Row 4: Size (KB) | 0.1316 | < 0.0001 | No
+
+--- TABLE 4 ---
+Row 0: Variable | Grupo | N | Estadístico W | Valor p | ¿Normal?
+Row 1: Stars | Organization | 878 | 0.9076 | < 0.0001 | No
+Row 2: Stars | User | 689 | 0.8861 | < 0.0001 | No
+Row 3: Forks | Organization | 878 | 0.8103 | < 0.0001 | No
+Row 4: Forks | User | 689 | 0.6040 | < 0.0001 | No
+Row 5: Open Issues | Organization | 878 | 0.5043 | < 0.0001 | No
+Row 6: Open Issues | User | 689 | 0.5647 | < 0.0001 | No
+
+--- TABLE 5 ---
+Row 0: Variable | Grupo | N | Estadístico W | Valor p | ¿Normal?
+Row 1: Stars | MIT | 546 | 0.8910 | < 0.0001 | No
+Row 2: Stars | Apache-2.0 | 405 | 0.9080 | < 0.0001 | No
+Row 3: Forks | MIT | 546 | 0.6168 | < 0.0001 | No
+Row 4: Forks | Apache-2.0 | 405 | 0.6438 | < 0.0001 | No
+Row 5: Open Issues | MIT | 546 | 0.4517 | < 0.0001 | No
+Row 6: Open Issues | Apache-2.0 | 405 | 0.6256 | < 0.0001 | No
+
+--- TABLE 6 ---
+Row 0: Variable | Estadístico de Levene | Valor p | ¿Varianzas homogéneas? | Prueba a usar
+Row 1: Stars | 3.8845 | 0.0489 | No | t de Welch
+Row 2: Forks | 3.0677 | 0.0801 | Sí | t de Student
+Row 3: Open Issues | 40.1906 | < 0.0001 | No | t de Welch
+Row 4: Size (KB) | 0.0664 | 0.7968 | Sí | t de Student
+
+--- TABLE 7 ---
+Row 0: Variable | Estadístico de Levene | Valor p | ¿Varianzas homogéneas? | Prueba a usar
+Row 1: Stars | 0.2254 | 0.6351 | Sí | t de Student
+Row 2: Forks | 0.7708 | 0.3802 | Sí | t de Student
+Row 3: Open Issues | 8.5266 | 0.0036 | No | t de Welch
+Row 4: Size (KB) | 0.0028 | 0.9579 | Sí | t de Student
+
+--- TABLE 8 ---
+Row 0: Variable | Media | μ₀ | Hipótesis | t | Sig. | Decisión
+Row 1: Stars | 8963.88 | 5000 | H₁: μ ≠ 5000 | 35.57 | < 0.01 | Rechaza H₀
+Row 2: Forks | 1318.58 | 1000 | H₁: μ > 1000 | 10.41 | < 0.01 | Rechaza H₀
+Row 3: Open Issues | 179.91 | 100 | H₁: μ ≠ 100 | 9.37 | < 0.01 | Rechaza H₀
+
+--- TABLE 9 ---
+Row 0: Variable | Diferencia (Media − μ₀) | d de Cohen | Magnitud
+Row 1: Stars | 3963.88 | 0.90 | Grande
+Row 2: Forks | 318.58 | 0.26 | Pequeño
+Row 3: Open Issues | 79.91 | 0.24 | Pequeño
+
+--- TABLE 10 ---
+Row 0: Variable | Grupo | N | Media | Desv. Est. | Error Est. Media
+Row 1: Stars | Organization | 878 | 9243.75 | 4496.82 | 151.76
+Row 2: Stars | User | 689 | 8607.25 | 4277.10 | 162.94
+Row 3: Forks | Organization | 878 | 1305.18 | 1023.69 | 34.55
+Row 4: Forks | User | 689 | 1335.65 | 1415.80 | 53.94
+Row 5: Open Issues | Organization | 878 | 237.30 | 414.29 | 13.98
+Row 6: Open Issues | User | 689 | 106.77 | 175.96 | 6.70
+Row 7: Size (KB) | Organization | 878 | 144030.95 | 838704.44 | 28304.90
+Row 8: Size (KB) | User | 689 | 127849.93 | 671670.34 | 25588.60
+
+--- TABLE 11 ---
+Row 0: Variable | Prueba aplicada | t | gl | Sig. (bilateral) | Decisión
+Row 1: Stars | t de Welch | 2.859 | aprox. | < 0.01 | Diferencia significativa
+Row 2: Forks | t de Student | -0.494 | 1565 | 0.621 | No significativa
+Row 3: Open Issues | t de Welch | 8.418 | aprox. | < 0.01 | Diferencia significativa
+Row 4: Size (KB) | t de Student | 0.413 | 1565 | 0.680 | No significativa
+
+--- TABLE 12 ---
+Row 0: Variable | Dif. de medias | IC 95% de la diferencia | g de Hedges | Magnitud
+Row 1: Stars | 636.50 | [200.07 ; 1072.93] | 0.15 | Trivial-pequeño
+Row 2: Open Issues | 130.53 | [100.14 ; 160.92] | 0.39 | Pequeño-moderado
+Row 3: Forks | −30.47 | — (no sig.) | −0.03 | Trivial
+Row 4: Size (KB) | 16181.02 | — (no sig.) | 0.02 | Trivial
+
+--- TABLE 13 ---
+Row 0: Variable | Grupo | N | Media | Desv. Est. | Error Est. Media
+Row 1: Stars | MIT | 546 | 8860.57 | 4437.93 | 189.93
+Row 2: Stars | Apache-2.0 | 405 | 9090.93 | 4379.47 | 217.62
+Row 3: Forks | MIT | 546 | 1312.85 | 1329.09 | 56.88
+Row 4: Forks | Apache-2.0 | 405 | 1262.27 | 1162.93 | 57.79
+Row 5: Open Issues | MIT | 546 | 138.47 | 263.30 | 11.27
+Row 6: Open Issues | Apache-2.0 | 405 | 209.83 | 302.11 | 15.01
+Row 7: Size (KB) | MIT | 546 | 94772.06 | 422444.77 | 18078.97
+Row 8: Size (KB) | Apache-2.0 | 405 | 101869.28 | 214894.27 | 10678.18
+
+--- TABLE 14 ---
+Row 0: Variable | Prueba aplicada | t | gl | Sig. (bilateral) | Decisión
+Row 1: Stars | t de Student | -0.796 | 949 | 0.426 | No significativa
+Row 2: Forks | t de Student | 0.612 | 949 | 0.541 | No significativa
+Row 3: Open Issues | t de Welch | -3.802 | aprox. | < 0.01 | Diferencia significativa
+Row 4: Size (KB) | t de Student | -0.310 | 949 | 0.757 | No significativa
+
+--- TABLE 15 ---
+Row 0: Variable | Dif. de medias (MIT−Apache) | IC 95% de la diferencia | g de Hedges | Magnitud
+Row 1: Open Issues | −71.36 | [−108.15 ; −34.57] | −0.25 | Pequeño
+Row 2: Stars | −230.36 | — (no sig.) | −0.05 | Trivial
+Row 3: Forks | 50.58 | — (no sig.) | 0.04 | Trivial
+Row 4: Size (KB) | −7097.22 | — (no sig.) | −0.02 | Trivial

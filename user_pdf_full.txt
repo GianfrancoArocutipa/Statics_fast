@@ -1,0 +1,581 @@
+=== PAGE 1 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 1 
+ 
+ 
+Prueba de ANOVA 
+EJERCICIOS PRUEBAS DE ANOVA 
+ 
+APELLIDOS Y NOMBRE: Arocutipa Arocutipa Gian Franco  
+CURSO: ESTADÍSTICA INFERENCIAL Y ANÁLISIS DE DATOS 
+ 
+Objetivo 
+Aplicar el análisis de varianza (ANOVA) de un factor para comparar los promedios de tres o más grupos 
+independientes, mediante la formulación de hipótesis, la verificación de los supuestos de normalidad y 
+homogeneidad de varianzas, la aplicación de la prueba ANOVA y la interpretación de los resultados en 
+problemas relacionados con Ingeniería de Sistemas. 
+Indicaciones 
+Desarrolle cada ejercicio utilizando el ANOVA de un factor para muestras independientes. Considere un nivel 
+de significancia de α = 0,05 y realice el análisis estadístico correspondiente. 
+Para cada ejercicio: 
+1. Formule las hipótesis: 
+o 
+H₀: los promedios de todos los grupos son iguales. 
+o 
+H₁: al menos uno de los promedios es diferente. 
+2. Calcule la media y desviación estándar de cada grupo. 
+3. Verifique el supuesto de normalidad mediante la prueba de Shapiro–Wilk para cada grupo. 
+4. Verifique el supuesto de homogeneidad de varianzas mediante la prueba de Levene. 
+5. Aplique el ANOVA de un factor y determine el estadístico F, los grados de libertad y el p-valor. 
+6. Tome la decisión estadística considerando la regla: 
+o 
+p-valor ≥ α → H₀ 
+o 
+p-valor < α → H₁ 
+7. Si el ANOVA presenta diferencias estadísticamente significativas, aplique una prueba post hoc para 
+determinar entre qué grupos se encuentran las diferencias. 
+8. Redacte la conclusión e interprete los resultados en el contexto del problema. 
+Importante: el ANOVA permite determinar si existen diferencias significativas entre los promedios de los 
+grupos, pero no identifica directamente entre qué grupos se presentan dichas diferencias. Cuando p-valor < 
+0,05, deberá complementarse el análisis con una prueba post hoc. Si se cumple la homogeneidad de 
+varianzas, puede utilizarse Tukey; si no se cumple, conviene utilizar Welch como alternativa al ANOVA clásico 
+y Games-Howell para las comparaciones posteriores. 
+ 
+
+[Images on page 1: 0]
+
+=== PAGE 2 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 2 
+ 
+ 
+1. Se quiere evaluar el rendimiento de tres servidores web diferentes en términos de tiempo de respuesta 
+a las solicitudes de los usuarios. Para ello, se registraron los tiempos de respuesta de solicitudes para 
+cada servidor. 
+a) Los tiempos (en milisegundos) para el Servidor 1 fueron: 
+120, 125, 130, 118, 122, 128, 123, 127, 129, 124, 121, 126, 132, 119, 133, 131, 123, 126, 120, 128. 
+b) Los tiempos para el Servidor 2 fueron: 
+110, 115, 118, 112, 108, 113, 117, 114, 119, 111, 116, 112, 119, 110, 115, 117, 113, 112, 118, 114. 
+c) Los tiempos para el Servidor 3 fueron: 
+105, 108, 112, 106, 110, 107, 113, 109, 111, 108, 112, 107, 113, 109, 111, 108, 112, 107, 113, 109. 
+Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en los tiempos de 
+respuesta entre los tres servidores. 
+ 
+Plantear Hipótesis: 
+Ho: Las puntuaciones promedio de 3 grupos son iguales. 
+H1: Por lo menos las puntuaciones promedio de 2 grupos son diferentes. 
+ESTADÍSTICOS 
+ESTADÍSTICOS 
+Servidor 1 
+Servidor 2 
+Servidor 3 
+Tamaño de la muestra = 
+20 
+20 
+20 
+Suma (Totales) = 
+2505.00 
+2283.00 
+2190.00 
+Media = 
+125.25 
+114.15 
+109.50 
+Desviación estándar = 
+4.48 
+3.22 
+2.50 
+ 
+ 
+Los datos provienen de una distribución normal:  
+Ho: Los datos de los 3 grupos de servidores presentan distribución normal. 
+H1 Por lo menos los datos de un grupo de servidores no presentan distribución normal. 
+
+[Images on page 2: 1]
+
+=== PAGE 3 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 3 
+ 
+ 
+ 
+Establecer un nivel de significancia:  0.05 
+Comparar el valor calculado con el valor con el que puede ocurrir al azar 
+F de la tabla: 3.16 
+F Estadístico de prueba calculado: 107.06 
+Valor de p= 0.000 (p < 0.001) 
+ 
+Varianzas iguales en cada población :  
+Ho: Las varianzas de los 3 grupos de servidores son iguales. 
+H1: Las varianzas de los 3 grupos de servidores son diferentes. 
+Conclusión de Varianzas: 
+Dado que p valor = 0.052, las varianzas son iguales. 
+ 
+¿Utilizando el valor P, con cuál de las hipótesis nos quedamos? 
+Dado que p valor menor (0.001) que el nivel de significancia (0.05), es probable que se rechace la 
+hipótesis nula. 
+A un margen de error de 5% se concluye que, por lo menos las puntuaciones promedio de 2 grupos 
+son diferentes. 
+Realizar la prueba POST HOC, según el Resultado de la Prueba de Homogeneidad de Varianzas 
+Indicar el tipo de Prueba: La prueba de Tukey 
+
+[Images on page 3: 3]
+
+=== PAGE 4 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 4 
+ 
+ 
+Prueba Post Hoc 
+Indicar el número de Sub conjuntos homogéneos = 3 grupos 
+ 
+Interpretacion de resultados de Sub conjuntos formados 
+Dado que las puntuaciones de los grupos son diferentes. Donde el Servidor 1 (125.13 ms / 125.25 ms) 
+es el que tiene las puntuaciones más altas, seguido del servidor 2 (113.93 ms / 114.15 ms), por lo que 
+se estaría sugiriendo que la configuración optima seria la del servidor 3 (109.40 ms / 109.50 ms), a un 
+margen de error del 5%. 
+ 
+ 
+2. Se desea comparar el rendimiento de cuatro algoritmos de compresión de archivos diferentes en 
+términos de la tasa de compresión alcanzada. Para ello, se comprimió una muestra de 25 archivos con 
+cada algoritmo y se registró la tasa de compresión obtenida. 
+a) Las tasas de compresión para el Algoritmo 1 fueron: 60.3%, 59.8%, 60.5%, 59.9%, 60.2%, 59.7%, 
+60.4%, 59.8%, 60.1%, 59.6%, 60.3%, 59.7%, 60.0%, 59.9%, 60.2%. 
+b) Las tasas para el Algoritmo 2 fueron: 61.2%, 61.6%, 61.0%, 61.3%, 61.5%, 61.1%, 61.4%, 61.7%, 
+61.2%, 61.6%, 61.0%, 61.3%, 61.5%, 61.1%, 61.4%. 
+c) Las tasas para el Algoritmo 3 fueron: 59.5%, 59.9%, 60.1%, 59.7%, 60.0%, 59.6%, 59.8%, 60.2%, 
+59.5%, 59.9%, 60.1%, 59.7%, 60.0%, 59.6%, 59.8%. Las tasas para el Algoritmo 4 fueron: 60.8%, 
+61.1%, 60.5%, 61.0%, 60.9%, 61.2%, 60.7%, 61.3%, 60.8%, 61.1%, 60.5%, 61.0%, 60.9%, 61.2%, 60.7%. 
+Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en las tasas de 
+compresión entre los cuatro algoritmos. 
+ 
+Plantear Hipótesis: 
+Ho: Las puntuaciones promedio de 4 grupos son iguales. 
+H1: Por lo menos las puntuaciones promedio de 2 grupos son diferentes. 
+ESTADÍSTICOS 
+ESTADÍSTICOS 
+Algoritmo 1 
+Algoritmo 2 
+Algoritmo 3 
+Algoritmo 4 
+Tamaño de la 
+muestra = 
+15 
+15 
+15 
+15 
+Suma (Totales) = 
+900.40 
+919.90 
+897.40 
+913.70 
+
+[Images on page 4: 1]
+
+=== PAGE 5 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 5 
+ 
+ 
+Media = 
+60.03 
+61.33 
+59.83 
+60.91 
+Desviación 
+estándar = 
+0.28 
+0.23 
+0.23 
+0.25 
+ 
+ 
+Los datos provienen de una distribución normal:  
+Ho: Los datos de los 4 grupos de algoritmos presentan distribución normal. 
+H1 Por lo menos los datos de un grupo de algoritmos no presentan distribución normal. 
+ 
+Establecer un nivel de significancia:  0.05 
+Comparar el valor calculado con el valor con el que puede ocurrir al azar 
+F de la tabla: 2.77 
+F Estadístico de prueba calculado: 126.50 
+Valor de p= 0.000 (p < 0.001) 
+ 
+Varianzas iguales en cada población :  
+
+[Images on page 5: 3]
+
+=== PAGE 6 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 6 
+ 
+ 
+Ho: Las varianzas de los 4 grupos de algoritmos son iguales. 
+H1: Las varianzas de los 4 grupos de algoritmos son diferentes. 
+Conclusión de Varianzas: 
+Dado que p valor = 0.592, las varianzas son iguales. 
+ 
+¿Utilizando el valor P, con cuál de las hipótesis nos quedamos? 
+Dado que p valor menor (0.001) que el nivel de significancia (0.05), es probable que se rechace la 
+hipótesis nula. 
+A un margen de error de 5% se concluye que, por lo menos las puntuaciones promedio de 2 grupos 
+son diferentes. 
+Realizar la prueba POST HOC, según el Resultado de la Prueba de Homogeneidad de Varianzas 
+Indicar el tipo de Prueba: La prueba de Tukey 
+Prueba Post Hoc 
+Indicar el número de Sub conjuntos homogéneos = 3 grupos 
+ 
+Interpretacion de resultados de Sub conjuntos formados 
+Dado que las puntuaciones de los grupos son diferentes. Donde el Algoritmo 2 (61.33%) es el que 
+tiene las puntuaciones más altas (mayor tasa de compresión), seguido del Algoritmo 4 (60.91%), 
+mientras que los Algoritmos 1 (60.03%) y 3 (59.83%) forman un mismo subconjunto homogéneo, por lo 
+que se estaría sugiriendo que la configuración óptima sería la del Algoritmo 2 (61.33%), a un margen 
+de error del 5%. 
+ 
+ 
+3. Se quiere evaluar el rendimiento de tres sistemas de almacenamiento en la nube diferentes en términos 
+de velocidad de acceso a los archivos. Se registraron los tiempos de acceso (en milisegundos) para una 
+
+[Images on page 6: 2]
+
+=== PAGE 7 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 7 
+ 
+ 
+muestra de 30 archivos en cada sistema. 
+a) Los tiempos para el Sistema 1 fueron: 15, 16, 14, 17, 15, 16, 16, 17, 14, 15, 16, 14, 17, 15, 16, 16, 17, 
+14, 15, 16, 14, 17, 15, 16, 16, 17, 14, 15, 16, 14. 
+b) Los tiempos para el Sistema 2 fueron: 13, 14, 12, 15, 13, 14, 14, 15, 12, 13, 14, 12, 15, 13, 14, 14, 15, 
+12, 13, 14, 12, 15, 13, 14, 14, 15, 12, 13, 14, 12. 
+c) Los tiempos para el Sistema 3 fueron: 16, 17, 15, 18, 16, 17, 17, 18, 15, 16, 17, 15, 18, 16, 17, 17, 18, 
+15, 16, 17, 15, 18, 16, 17, 17, 18, 15, 16, 17, 15. 
+Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en los tiempos de acceso 
+entre los tres sistemas de almacenamiento en la nube. 
+ 
+Plantear Hipótesis: 
+Ho: Las puntuaciones promedio de 3 grupos son iguales. 
+H1: Por lo menos las puntuaciones promedio de 2 grupos son diferentes. 
+ESTADÍSTICOS 
+ESTADÍSTICOS 
+Sistema 1 
+Sistema 2 
+Sistema 3 
+Tamaño de la muestra = 
+30 
+30 
+30 
+Suma (Totales) = 
+465.00 
+405.00 
+495.00 
+Media = 
+15.50 
+13.50 
+16.50 
+Desviación estándar = 
+1.07 
+1.07 
+1.07 
+ 
+ 
+Los datos provienen de una distribución normal:  
+Ho: Los datos de los 3 grupos de sistemas presentan distribución normal. 
+H1 Por lo menos los datos de un grupo de sistemas no presentan distribución normal. 
+
+[Images on page 7: 1]
+
+=== PAGE 8 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 8 
+ 
+ 
+ 
+Establecer un nivel de significancia:  0.05 
+Comparar el valor calculado con el valor con el que puede ocurrir al azar 
+F de la tabla: 3.10 
+F Estadístico de prueba calculado: 60.60 
+Valor de p= 0.000 (p < 0.001) 
+ 
+Varianzas iguales en cada población :  
+Ho: Las varianzas de los 3 grupos de sistemas son iguales. 
+H1: Las varianzas de los 3 grupos de sistemas son diferentes. 
+Conclusión de Varianzas: 
+Dado que p valor = 1.000, las varianzas son iguales. 
+ 
+¿Utilizando el valor P, con cuál de las hipótesis nos quedaríamos? 
+Dado que p valor menor (0.001) que el nivel de significancia (0.05), es probable que se rechace la 
+hipótesis nula. 
+A un margen de error de 5% se concluye que, por lo menos las puntuaciones promedio de 2 grupos 
+son diferentes. 
+Realizar la prueba POST HOC, según el Resultado de la Prueba de Homogeneidad de Varianzas 
+Indicar el tipo de Prueba: La prueba de Tukey 
+
+[Images on page 8: 3]
+
+=== PAGE 9 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 9 
+ 
+ 
+Prueba Post Hoc 
+Indicar el número de Sub conjuntos homogéneos = 3 grupos 
+ 
+Interpretación de los resultados de los Sub conjuntos formados 
+Dado que las puntuaciones de los grupos son diferentes. Donde el Sistema 3 (16.50 ms) es el que 
+tiene las puntuaciones más altas (mayor tiempo de respuesta), seguido del Sistema 1 (15.50 ms), por 
+lo que se estaría sugiriendo que la configuración óptima sería la del Sistema 2 (13.50 ms) al ofrecer la 
+mayor velocidad de acceso a los archivos, a un margen de error del 5%. 
+ 
+ 
+4. Se desea evaluar la efectividad de tres métodos de encriptación diferentes en términos de la seguridad 
+de la comunicación de datos. Se registraron los niveles de seguridad (en porcentaje) para una muestra 
+de 25 transmisiones de datos en cada método. 
+a) Los niveles para el Método 1 fueron: 98.5%, 98.2%, 98.7%, 98.3%, 98.6%, 98.4%, 98.8%, 98.2%, 
+98.7%, 98.5%, 98.3%, 98.6%, 98.4%, 98.9%, 98.2%, 98.6%, 98.4%, 98.7%, 98.3%, 98.5%, 98.1%, 98.6%, 
+98.4%, 98.8%, 98.3%. 
+
+[Images on page 9: 1]
+
+=== PAGE 10 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 10 
+ 
+ 
+b) Los niveles para el Método 2 fueron: 97.9%, 97.6%, 98.0%, 97.7%, 98.2%, 97.8%, 98.1%, 97.6%, 
+98.0%, 97.8%, 98.3%, 97.9%, 98.1%, 97.7%, 98.0%, 97.6%, 98.0%, 97.8%, 98.2%, 97.9%, 98.1%, 97.7%, 
+98.0%, 97.6%, 98.0%. 
+c) Los niveles para el Método 3 fueron: 98.2%, 98.0%, 98.3%, 98.1%, 98.4%, 98.2%, 98.5%, 98.3%, 
+98.2%, 98.0%, 98.3%, 98.1%, 98.4%, 98.2%, 98.5%, 98.3%, 98.2%, 98.0%, 98.3%, 98.1%, 98.4%, 98.2%, 
+98.5%, 98.3%, 98.2%. 
+Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en los niveles de 
+seguridad entre los tres métodos de encriptación. 
+ 
+Plantear Hipótesis: 
+Ho: Las puntuaciones promedio de 3 grupos son iguales. 
+H1: Por lo menos las puntuaciones promedio de 2 grupos son diferentes. 
+ESTADÍSTICOS 
+ESTADÍSTICOS 
+Método 1 
+Método 2 
+Método 3 
+Tamaño de la muestra = 
+25 
+25 
+25 
+Suma (Totales) = 
+2462.00 
+2447.60 
+2456.20 
+Media = 
+98.48 
+97.90 
+98.25 
+Desviación estándar = 
+0.22 
+0.21 
+0.15 
+ 
+ 
+Los datos provienen de una distribución normal:  
+Ho: Los datos de los 3 grupos de métodos de encriptación presentan distribución normal. 
+H1 Por lo menos los datos de un grupo de métodos de encriptación no presentan distribución normal. 
+ 
+
+[Images on page 10: 2]
+
+=== PAGE 11 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 11 
+ 
+ 
+Establecer un nivel de significancia:  0.05 
+Comparar el valor calculado con el valor con el que puede ocurrir al azar 
+F de la tabla: 3.12 
+F Estadístico de prueba calculado: 56.16 
+Valor de p= 0.000 (p < 0.001) 
+ 
+Varianzas iguales en cada población :  
+Ho: Las varianzas de los 3 grupos de métodos de encriptación son iguales. 
+H1: Las varianzas de los 3 grupos de métodos de encriptación son diferentes. 
+Conclusión de Varianzas: 
+Dado que p valor = 0.099, las varianzas son iguales. 
+ 
+¿Utilizando el valor P, con cuál de las hipótesis nos quedaríamos? 
+Dado que p valor menor (0.001) que el nivel de significancia (0.05), es probable que se rechace la 
+hipótesis nula. 
+A un margen de error de 5% se concluye que, por lo menos las puntuaciones promedio de 2 grupos 
+son diferentes. 
+Realizar la prueba POST HOC, según el Resultado de la Prueba de Homogeneidad de Varianzas 
+Indicar el tipo de Prueba: La prueba de Tukey 
+Prueba Post Hoc 
+Indicar el número de Sub conjuntos homogéneos = 3 grupos 
+
+[Images on page 11: 2]
+
+=== PAGE 12 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 12 
+ 
+ 
+ 
+Interpretación de los resultados de los Sub conjuntos formados 
+Dado que las puntuaciones de los grupos son diferentes. Donde el Método 1 (98.48%) es el que tiene 
+las puntuaciones más altas de nivel de seguridad, seguido del Método 3 (98.25%) y del Método 2 
+(97.90%), por lo que se estaría sugiriendo que la configuración óptima sería la del Método 1 (98.48%), 
+a un margen de error del 5%. 
+ 
+ 
+5. Se quiere comparar el rendimiento de cuatro métodos diferentes de procesamiento de señales en 
+términos de precisión. Para ello, se realizaron mediciones de precisión para una muestra de 20 señales 
+procesadas con cada método. 
+a) Las precisiones para el Método 1 fueron: 90.5%, 91.2%, 89.8%, 90.9%, 90.3%, 91.0%, 89.7%, 90.8%, 
+90.1%, 91.5%, 90.6%, 91.3%, 89.9%, 90.7%, 90.4%, 91.1%, 89.6%, 90.2%, 91.4%, 90.0%. 
+b) Las precisiones para el Método 2 fueron: 91.8%, 92.4%, 91.2%, 91.5%, 92.0%, 91.3%, 91.9%, 92.5%, 
+91.7%, 91.1%, 91.6%, 92.1%, 91.4%, 91.8%, 92.3%, 91.0%, 91.3%, 91.7%, 92.2%, 91.6%. 
+c) Las precisiones para el Método 3 fueron: 89.2%, 89.8%, 88.5%, 88.9%, 89.6%, 88.3%, 88.8%, 89.3%, 
+88.7%, 89.4%, 89.0%, 89.7%, 88.6%, 89.1%, 89.5%, 88.4%, 88.7%, 89.2%, 88.8%, 89.3%. 
+d) Las precisiones para el Método 4 fueron: 93.1%, 93.8%, 92.5%, 92.9%, 93.6%, 92.3%, 92.8%, 93.3%, 
+92.7%, 93.4%, 93.0%, 93.7%, 92.6%, 93.1%, 93.5%, 92.4%, 92.8%, 93.2%, 92.9%, 93.4%. 
+Utilice análisis de varianza (ANOVA) y determine si hay diferencias significativas en la precisión entre los 
+cuatro métodos de procesamiento de señales. 
+ 
+Plantear Hipótesis: 
+Ho: Las puntuaciones promedio de 4 grupos son iguales. 
+H1: Por lo menos las puntuaciones promedio de 2 grupos son diferentes. 
+ESTADÍSTICOS 
+ESTADÍSTICOS 
+Método 1 
+Método 2 
+Método 3 
+Método 4 
+Tamaño de la 
+muestra = 
+20 
+20 
+20 
+20 
+Suma (Totales) = 
+1811.00 
+1834.40 
+1780.80 
+1861.00 
+
+[Images on page 12: 1]
+
+=== PAGE 13 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 13 
+ 
+ 
+Media = 
+90.55 
+91.72 
+89.04 
+93.05 
+Desviación 
+estándar = 
+0.59 
+0.44 
+0.44 
+0.44 
+ 
+ 
+Los datos provienen de una distribución normal:  
+Ho: Los datos de los 4 grupos de métodos presentan distribución normal. 
+H1 Por lo menos los datos de un grupo de métodos no presentan distribución normal. 
+ 
+Establecer un nivel de significancia:  0.05 
+Comparar el valor calculado con el valor con el que puede ocurrir al azar 
+F de la tabla: 2.72 
+F Estadístico de prueba calculado: 252.25 
+Valor de p= 0.000 (p < 0.001) 
+ 
+Varianzas iguales en cada población:  
+
+[Images on page 13: 3]
+
+=== PAGE 14 ===
+Universidad Privada de Tacna 
+Facultad de Ingeniería 
+Escuela Profesional de Ingeniería de Sistemas 
+Dr. Luis A. Fernández Vizcarra 
+Email: luafernandez@upt.pe 
+Página 14 
+ 
+ 
+Ho: Las varianzas de los 4 grupos de métodos son iguales. 
+H1: Las varianzas de los 4 grupos de métodos son diferentes. 
+Conclusión de Varianzas: 
+Dado que p valor = 0.202, las varianzas son iguales. 
+ 
+¿Utilizando el valor P, con cuál de las hipótesis nos quedaríamos? 
+Dado que p valor menor (0.001) que el nivel de significancia (0.05), es probable que se rechace la 
+hipótesis nula. 
+A un margen de error de 5% se concluye que, por lo menos las puntuaciones promedio de 2 grupos 
+son diferentes. 
+Realizar la prueba POST HOC, según el Resultado de la Prueba de Homogeneidad de Varianzas 
+Indicar el tipo de Prueba: La prueba de Tukey 
+Prueba Post Hoc 
+Indicar el número de Sub conjuntos homogéneos = 4 grupos 
+ 
+Interpretación de los resultados de los Sub conjuntos formados 
+Dado que las puntuaciones de los grupos son diferentes. Donde el Método 4 (93.05%) es el que tiene 
+las puntuaciones más altas (mayor precisión), seguido del Método 2 (91.72%), el Método 1 (90.55%) y 
+el Método 3 (89.04%), por lo que se estaría sugiriendo que la configuración óptima sería la del Método 
+4 (93.05%), a un margen de error del 5%. 
+ 
+
+[Images on page 14: 2]
+
