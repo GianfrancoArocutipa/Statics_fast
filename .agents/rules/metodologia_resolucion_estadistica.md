@@ -2,7 +2,8 @@
 
 Esta guía define las reglas estrictas de formato y metodología para la resolución de guías de ejercicios de Estadística Inferencial (ANOVA, Kruskal-Wallis, Chi-cuadrado, Mann-Whitney, etc.) dictadas por el docente (Dr. Luis A. Fernández Vizcarra - Universidad Privada de Tacna).
 
-## 1. Estructura General del Documento
+## 1. Estructura General del Documento y Preservación de Formato
+- **Regla de Oro:** Siempre que se parta de un documento `.docx` base o plantilla proporcionada, se debe **mantener todo el formato original al 100%** (colores de texto, fondos/sombreados de celda, fuentes, tamaños, márgenes, bordes, espaciados y encabezados). Únicamente se debe reemplazar la información y los datos.
 - **Página y Márgenes:** Formato A4 (210 x 297 mm), márgenes superior e inferior de 0.7 pulgadas, laterales de 0.85 pulgadas.
 - **Encabezado institucional:**
   ```text

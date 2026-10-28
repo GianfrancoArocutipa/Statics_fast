@@ -14,6 +14,8 @@ ENV/
 test_*.docx
 test_*.png
 test_out.docx
+~$*
+*.tmp
 
 # IDE configs
 .idea/

@@ -20,6 +20,10 @@ Y verificar con una prueba rápida de importación (`python -c "import scipy, do
 
 ## 2. Flujo de Trabajo Obligatorio al Recibir Ejercicios
 
+> [!IMPORTANT]
+> **REGLA CRÍTICA DE PRESERVACIÓN DE FORMATO:**
+> Siempre que el usuario envíe o proporcione un documento (`.docx`), se DEBE mantener **TODO el formato** original (colores de texto, sombreados, paleta cromática, tipografías, tamaños de fuente, márgenes, encabezados, pies de página, tablas, bordes y estilos de párrafos). **Únicamente se debe modificar/actualizar la información y los datos** (cálculos, tablas SPSS, pasos de hipótesis y conclusiones), sin alterar la estética ni la estructura visual del documento base.
+
 Cuando el usuario proporcione un documento Word (.docx), PDF o texto con ejercicios a resolver:
 
 1. **Extracción y Análisis de Datos:**

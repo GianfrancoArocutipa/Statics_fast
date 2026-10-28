@@ -12,3 +12,4 @@ Sigue estrictamente las directrices y metodología documentadas en [AGENTS.md](A
 3. **Tablas SPSS:** Usar capturas renderizadas con estética oficial de IBM SPSS Statistics 26-29.
 4. **Conclusiones Breves:** En el Paso 7/8 no expandirse en explicaciones largas; redactar una sola frase concluyente siguiendo el modelo de los Ejercicios 1 y 2.
 5. **Entrega Dual:** Generar y enlazar siempre tanto el `.docx` editable como el `.pdf` compilado.
+6. **Preservación Total de Formato:** Mantener siempre todo el formato original (colores, fuentes, bordes, encabezados, diseño) del documento `.docx` recibido; solo actualizar la información.
