@@ -77,3 +77,9 @@ Cuando el usuario proporcione un documento Word (.docx), PDF o texto con ejercic
      ```
    - Exportar a `.pdf` nativo de Microsoft Word mediante `win32com.client` para un resultado limpio y uniforme.
    - Proporcionar siempre enlaces markdown clickeables tanto al `.docx` como al `.pdf`.
+
+5. **Generación Obligatoria de Archivos SPSS por Ejercicio (.sav y .spv):**
+   - Para cada ejercicio contenido en el documento resuelto, se DEBEN generar obligatoriamente los archivos correspondientes dentro de la carpeta `Spss Archivos/` (o subcarpeta designada):
+     1. **Archivo de Datos (.sav):** Archivo nativo de SPSS generado con `pyreadstat` estructurando todas las variables, tipos de datos, escalas de medida y etiquetas de valor (Value Labels), nombrado obligatoriamente: `Ejercicio0X_GF.sav` (donde `_GF` son las iniciales del estudiante Gian Franco).
+     2. **Archivo de Información de SPSS (.spv / .sps):** Archivo de visor de resultados SPSS (`Ejercicio0X.spv`) y/o sintaxis reproducible (`Ejercicio0X.sps`) con las órdenes y salidas de los procedimientos estadísticos ejecutados.
+

@@ -47,3 +47,9 @@ Para cada ejercicio, seguir estrictamente la siguiente secuencia:
 ## 4. Scripts y Herramientas del Repositorio
 - `generate_kruskal_images.py`: Genera capturas de tablas SPSS nítidas y auténticas.
 - `build_kruskal_doc.py`: Ensambla el documento Word `.docx` con espaciado óptimo y exporta automáticamente a `.pdf` vía Word COM automation.
+
+## 5. Generación Obligatoria de Archivos SPSS (.SAV y .SPV) por Ejercicio
+Por cada ejercicio del documento resuelto, es mandatorio generar y colocar en la carpeta `Spss Archivos/` (o subcarpeta designada):
+- **Archivo de datos (.sav):** Archivo con la estructura de variables, medidas y etiquetas de valor (e.g. `Ejercicio0X_GF.sav`), usando `pyreadstat`. Las siglas `_GF` representan las iniciales de Gian Franco.
+- **Archivo de información de resultados SPSS (.spv / .sps):** Archivo de visor de salida de SPSS (`Ejercicio0X.spv`) y/o sintaxis oficial de SPSS (`Ejercicio0X.sps`) que replica paso a paso los comandos ejecutados para obtener los resultados.
+
