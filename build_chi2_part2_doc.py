@@ -12,10 +12,18 @@ SRC_DOCX = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte (1) (1).do
 BACKUP_DOCX = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte_Original.docx")
 RESUELTO_DOCX = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte_Resuelto.docx")
 RESUELTO_PDF = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte_Resuelto.pdf")
+
+DOC_1_2_PATH = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte (1) (2).docx")
+DOC_1_2_BACKUP = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte (1) (2)_Original.docx")
+DOC_1_2_PDF = os.path.join(BASE_DIR, "Ejercicios Chi cuadrado 2da. parte (1) (2).pdf")
+
 IMG_DIR = os.path.join(BASE_DIR, "generated_chi2_part2_images")
 
-if not os.path.exists(BACKUP_DOCX):
+if not os.path.exists(BACKUP_DOCX) and os.path.exists(SRC_DOCX):
     shutil.copy2(SRC_DOCX, BACKUP_DOCX)
+
+if not os.path.exists(DOC_1_2_BACKUP) and os.path.exists(DOC_1_2_PATH):
+    shutil.copy2(DOC_1_2_PATH, DOC_1_2_BACKUP)
 
 
 def set_run_font(run, bold=False, subscript=False):
@@ -35,7 +43,6 @@ def set_run_font(run, bold=False, subscript=False):
 
 def format_solution_paragraph(p, bold=False):
     pPr = p._p.get_or_add_pPr()
-    # Remove any numPr or pStyle if inherited
     pStyle = pPr.find(qn("w:pStyle"))
     if pStyle is not None:
         pPr.remove(pStyle)
@@ -75,7 +82,6 @@ def insert_paragraph_after(ref_p, text="", bold=False, hypothesis=None, multilin
     format_solution_paragraph(p, bold=bold)
 
     if hypothesis is not None:
-        # hypothesis = ("0" or "1", "text after colon")
         sub_digit, body_text = hypothesis
         r1 = p.add_run("H")
         set_run_font(r1, bold=False, subscript=False)
@@ -84,7 +90,6 @@ def insert_paragraph_after(ref_p, text="", bold=False, hypothesis=None, multilin
         r3 = p.add_run(f": {body_text}")
         set_run_font(r3, bold=False, subscript=False)
     elif multiline_items is not None:
-        # First line + <w:br/> + <w:br/> + items separated by <w:br/>
         intro_text, items = multiline_items
         r_intro = p.add_run(intro_text)
         set_run_font(r_intro, bold=False)
@@ -106,7 +111,6 @@ def insert_paragraph_after(ref_p, text="", bold=False, hypothesis=None, multilin
         else:
             with Image.open(img_path) as im:
                 w_px, h_px = im.size
-            # Rendered at 2x scale; convert to Word width (capped at 5731510 EMUs = ~6.27 in)
             target_emu = min(int(w_px * 4850), 5731510)
             r_img.add_picture(img_path, width=Emu(target_emu))
     else:
@@ -118,7 +122,6 @@ def insert_paragraph_after(ref_p, text="", bold=False, hypothesis=None, multilin
 
 
 def update_table_3_labels(table):
-    # Match the exact labels added in class by the professor in Table 3 (Exercise 4)
     col_labels = [
         "Sistemas de bases de datos",
         "Rápido (Baja) Y1",
@@ -157,7 +160,7 @@ SOLUTIONS = [
         "test_img": "ex1_test.png",
         "contrast": "Dado que, el p valor (0.000) es menor que nivel de significancia (0.05), es probable que se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, existe una asociación entre el sistema operativo y el tipo de dispositivo.",
-        "admin_conc": "Dado que la elección del sistema operativo está asociada al tipo de dispositivo, se sugiere destinar Windows principalmente para equipos Desktop (50.0%) y Laptop (44.4%), y priorizar el sistema operativo Linux para los Servidores, donde presenta una clara predominancia (72.7%).",
+        "admin_conc": "Es favorable implementar el sistema operativo de acuerdo al tipo de dispositivo (Windows en equipos Desktop y Laptop, y Linux en Servidores), porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue el mayor porcentaje de predominancia en Servidores con Linux (72.7%) y Desktop con Windows (50.0%).",
     },
     {
         "num": 2,
@@ -170,7 +173,7 @@ SOLUTIONS = [
         "test_img": "ex2_test.png",
         "contrast": "Dado que, el p valor (0.008) es menor que nivel de significancia (0.05), es probable que se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, existe una asociación entre el lenguaje de programación y el éxito del proyecto.",
-        "admin_conc": "Es recomendable priorizar el uso de Python (66.7% de éxito) y JavaScript (63.6% de éxito) en el desarrollo de nuevos proyectos de software, así como reforzar la capacitación técnica y el seguimiento en los proyectos desarrollados en Java, los cuales registraron una mayor tasa de fracaso (57.1%).",
+        "admin_conc": "Es favorable implementar los lenguajes de programación Python y JavaScript en los proyectos de software, porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue el mayor porcentaje de éxito alcanzado (66.7% y 63.6% respectivamente) y la reducción de porcentajes de fracaso frente a Java (57.1%).",
     },
     {
         "num": 3,
@@ -183,7 +186,7 @@ SOLUTIONS = [
         "test_img": "ex3_test.png",
         "contrast": "Dado que, el p valor (0.002) es menor que nivel de significancia (0.05), es probable que se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, las condiciones de fallos no son homogéneas entre los diferentes tipos de servidores.",
-        "admin_conc": "Se sugiere priorizar el uso de servidores MacOS y Linux para servicios críticos de hosting debido a que presentan menores porcentajes de fallas críticas (10.0% y 20.0% respectivamente), y establecer planes de mantenimiento preventivo en los servidores Windows, que registraron la mayor incidencia de fallas críticas (30.0%).",
+        "admin_conc": "Es favorable implementar los servidores MacOS y Linux en la compañía de hosting, porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue la reducción de porcentajes de fallas críticas (10.0% y 20.0% respectivamente) frente a Windows (30.0%).",
     },
     {
         "num": 4,
@@ -214,7 +217,7 @@ SOLUTIONS = [
         "test_img": "ex5_test.png",
         "contrast": "Dado que, el p valor (0.041) es menor que nivel de significancia (0.05), es probable que se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, hubo una mejora significativa en el rendimiento del algoritmo de compresión de datos después de la intervención.",
-        "admin_conc": "Es favorable implementar la optimización del código en el algoritmo de compresión de datos, porque ha mostrado efectividad en los datos evaluados y en sus respectivas pruebas, logrando incrementar la tasa de éxito del 70.0% al 80.0% (reducción de errores del 10%).",
+        "admin_conc": "Es favorable implementar el algoritmo de compresión de datos optimizado, porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue la reducción de porcentajes de errores (10%).",
     },
     {
         "num": 6,
@@ -242,7 +245,7 @@ SOLUTIONS = [
         "test_img": "ex7_test.png",
         "contrast": "Dado que, el p valor (0.005) es menor que nivel de significancia (0.05), es probable que se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, existe concordancia significativa entre los dos expertos al evaluar la confiabilidad del sistema de detección de intrusos (Kappa = 0.276).",
-        "admin_conc": "Si bien existe concordancia estadísticamente significativa entre ambos expertos (coincidiendo en el 79.0% de los casos evaluados), el valor del índice de Kappa (0.276) indica un nivel de acuerdo bajo o regular, por lo que se recomienda unificar los criterios de análisis de registros de red entre los especialistas.",
+        "admin_conc": "Es favorable implementar el sistema de detección de intrusos evaluado por los dos expertos, porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue el porcentaje de coincidencia en la detección de intrusiones (79%).",
     },
     {
         "num": 8,
@@ -255,7 +258,7 @@ SOLUTIONS = [
         "test_img": "ex8_test.png",
         "contrast": "Dado que, el p valor (0.000) es menor que nivel de significancia (0.05), es probable que se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, existe concordancia significativa entre los dos algoritmos al evaluar la confiabilidad del sistema de clasificación de fallos (Kappa = 0.462).",
-        "admin_conc": "Los algoritmos A y B presentan un nivel de concordancia moderado (Kappa = 0.462) y coinciden en el 86.0% de los eventos clasificados, por lo que es favorable emplear ambos algoritmos de detección de anomalías de forma conjunta para respaldar el diagnóstico de fallos.",
+        "admin_conc": "Es favorable implementar el sistema de clasificación de fallos mediante los dos algoritmos de detección de anomalías, porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue el porcentaje de coincidencia en la identificación de fallos (86%).",
     },
     {
         "num": 9,
@@ -268,7 +271,10 @@ SOLUTIONS = [
         "test_img": "ex9_test.png",
         "contrast": "Dado que, el p valor (0.584) es mayor que nivel de significancia (0.05), es probable que no se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, no hay una diferencia significativa en la eficacia de detección de intrusos entre el nuevo sistema y el antiguo.",
-        "admin_conc": "Dado que el nuevo sistema de detección de intrusos tiene una eficacia estadísticamente similar a la del sistema antiguo, no se justifica realizar una inversión adicional para el cambio de sistema salvo que existan mejoras en costos operativos, soporte o rendimiento.",
+        "admin_multiline": (
+            "Dado que los 2 sistemas de detección de intrusos, con respecto a la eficacia de detección son iguales, se podría sugerir adquirir cualquiera de estos sistemas. El factor diferenciador se podría estar considerando:",
+            ["1.Costos", "2.Garantias", "3.Interaccion"],
+        ),
     },
     {
         "num": 10,
@@ -281,15 +287,60 @@ SOLUTIONS = [
         "test_img": "ex10_test.png",
         "contrast": "Dado que, el p valor (0.304) es mayor que nivel de significancia (0.05), es probable que no se rechace la hipótesis nula.",
         "stat_conc": "A un margen de error del 5% se concluye que, no hay una diferencia significativa en la seguridad de las contraseñas generadas entre el Sistema A y el Sistema B.",
-        "admin_conc": "Dado que ambos sistemas de autenticación presentan un nivel de seguridad estadísticamente igual en la generación de contraseñas, se podría sugerir adquirir cualquiera de los dos sistemas considerando como factores diferenciadores el costo de implementación, la compatibilidad y el soporte técnico.",
+        "admin_multiline": (
+            "Dado que los 2 sistemas de autenticación, con respecto a la seguridad de las contraseñas generadas son iguales, se podría sugerir adquirir cualquiera de estos sistemas. El factor diferenciador se podría estar considerando:",
+            ["1.Costos", "2.Garantias", "3.Interaccion"],
+        ),
     },
 ]
 
 
-def main():
-    doc = docx.Document(BACKUP_DOCX)
+def insert_solution_steps(target_p, sol):
+    cur = target_p
+    # PASO 1
+    cur = insert_paragraph_after(cur, "PASO 1: Planteamiento de hipótesis", bold=True)
+    cur = insert_paragraph_after(cur, hypothesis=("0", sol["h0"]))
+    cur = insert_paragraph_after(cur, hypothesis=("1", sol["h1"]))
 
-    # Update Table 3 with Y1..Y6 and X1..X3 labels as done in class
+    # PASO 2
+    cur = insert_paragraph_after(cur, "PASO 2: Determinar el nivel de significancia", bold=True)
+    cur = insert_paragraph_after(cur, sol["ns"], bold=False)
+
+    # PASO 3
+    cur = insert_paragraph_after(cur, "PASO 3: Presentación de tablas de contingencia", bold=True)
+    cur = insert_paragraph_after(
+        cur,
+        img_path=os.path.join(IMG_DIR, sol["crosstab_img"]),
+        exact_emu_width=sol.get("crosstab_emu"),
+    )
+
+    # PASO 4
+    cur = insert_paragraph_after(cur, "PASO 4: Determinar la prueba estadística", bold=True)
+    cur = insert_paragraph_after(cur, sol["test_name"], bold=False)
+
+    # PASO 5
+    cur = insert_paragraph_after(cur, "PASO 5: Contrastación de hipótesis", bold=True)
+    cur = insert_paragraph_after(
+        cur,
+        img_path=os.path.join(IMG_DIR, sol["test_img"]),
+        exact_emu_width=sol.get("test_emu"),
+    )
+    cur = insert_paragraph_after(cur, sol["contrast"], bold=False)
+
+    # PASO 6
+    cur = insert_paragraph_after(cur, "PASO 6: Conclusión estadística", bold=True)
+    cur = insert_paragraph_after(cur, sol["stat_conc"], bold=False)
+
+    # PASO 7
+    cur = insert_paragraph_after(cur, "PASO 7: Conclusión administrativa", bold=True)
+    if "admin_multiline" in sol:
+        cur = insert_paragraph_after(cur, multiline_items=sol["admin_multiline"])
+    else:
+        cur = insert_paragraph_after(cur, sol["admin_conc"], bold=False)
+
+
+def build_full_10_doc():
+    doc = docx.Document(BACKUP_DOCX)
     update_table_3_labels(doc.tables[3])
 
     for sol in SOLUTIONS:
@@ -300,50 +351,8 @@ def main():
                 break
         if target_p is None:
             raise RuntimeError(f"Could not find paragraph for Exercise {sol['num']}")
+        insert_solution_steps(target_p, sol)
 
-        cur = target_p
-        # PASO 1
-        cur = insert_paragraph_after(cur, "PASO 1: Planteamiento de hipótesis", bold=True)
-        cur = insert_paragraph_after(cur, hypothesis=("0", sol["h0"]))
-        cur = insert_paragraph_after(cur, hypothesis=("1", sol["h1"]))
-
-        # PASO 2
-        cur = insert_paragraph_after(cur, "PASO 2: Determinar el nivel de significancia", bold=True)
-        cur = insert_paragraph_after(cur, sol["ns"], bold=False)
-
-        # PASO 3
-        cur = insert_paragraph_after(cur, "PASO 3: Presentación de tablas de contingencia", bold=True)
-        cur = insert_paragraph_after(
-            cur,
-            img_path=os.path.join(IMG_DIR, sol["crosstab_img"]),
-            exact_emu_width=sol.get("crosstab_emu"),
-        )
-
-        # PASO 4
-        cur = insert_paragraph_after(cur, "PASO 4: Determinar la prueba estadística", bold=True)
-        cur = insert_paragraph_after(cur, sol["test_name"], bold=False)
-
-        # PASO 5
-        cur = insert_paragraph_after(cur, "PASO 5: Contrastación de hipótesis", bold=True)
-        cur = insert_paragraph_after(
-            cur,
-            img_path=os.path.join(IMG_DIR, sol["test_img"]),
-            exact_emu_width=sol.get("test_emu"),
-        )
-        cur = insert_paragraph_after(cur, sol["contrast"], bold=False)
-
-        # PASO 6
-        cur = insert_paragraph_after(cur, "PASO 6: Conclusión estadística", bold=True)
-        cur = insert_paragraph_after(cur, sol["stat_conc"], bold=False)
-
-        # PASO 7
-        cur = insert_paragraph_after(cur, "PASO 7: Conclusión administrativa", bold=True)
-        if "admin_multiline" in sol:
-            cur = insert_paragraph_after(cur, multiline_items=sol["admin_multiline"])
-        else:
-            cur = insert_paragraph_after(cur, sol["admin_conc"], bold=False)
-
-    # Remove trailing empty paragraphs at the end of the document to prevent a blank last page
     while doc.paragraphs and not doc.paragraphs[-1].text.strip() and not doc.paragraphs[-1]._p.xpath(".//w:drawing"):
         p_el = doc.paragraphs[-1]._p
         p_el.getparent().remove(p_el)
@@ -353,7 +362,33 @@ def main():
     print(f"Saved: {RESUELTO_DOCX}")
     print(f"Saved: {SRC_DOCX}")
 
-    # Export to PDF via Word COM
+
+def build_doc_1_2():
+    if not os.path.exists(DOC_1_2_BACKUP):
+        return
+    doc = docx.Document(DOC_1_2_BACKUP)
+    # In DOC_1_2, only problems corresponding to SOLUTIONS[0] (num=1) and SOLUTIONS[6] (num=7) are unsolved
+    for sol in [SOLUTIONS[0], SOLUTIONS[6]]:
+        target_p = None
+        for p in doc.paragraphs:
+            if sol["question_substr"] in p.text:
+                target_p = p
+                break
+        if target_p is not None:
+            insert_solution_steps(target_p, sol)
+
+    while doc.paragraphs and not doc.paragraphs[-1].text.strip() and not doc.paragraphs[-1]._p.xpath(".//w:drawing"):
+        p_el = doc.paragraphs[-1]._p
+        p_el.getparent().remove(p_el)
+
+    doc.save(DOC_1_2_PATH)
+    print(f"Saved: {DOC_1_2_PATH}")
+
+
+def main():
+    build_full_10_doc()
+    build_doc_1_2()
+
     word = win32com.client.Dispatch("Word.Application")
     word.Visible = False
     try:
@@ -361,6 +396,12 @@ def main():
         wdoc.SaveAs(os.path.abspath(RESUELTO_PDF), FileFormat=17)
         wdoc.Close(False)
         print(f"Exported PDF: {RESUELTO_PDF}")
+
+        if os.path.exists(DOC_1_2_PATH):
+            wdoc2 = word.Documents.Open(os.path.abspath(DOC_1_2_PATH))
+            wdoc2.SaveAs(os.path.abspath(DOC_1_2_PDF), FileFormat=17)
+            wdoc2.Close(False)
+            print(f"Exported PDF: {DOC_1_2_PDF}")
     finally:
         word.Quit()
 

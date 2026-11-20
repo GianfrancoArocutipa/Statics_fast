@@ -41,6 +41,28 @@ Para cada ejercicio, seguir estrictamente la siguiente secuencia:
      "A un margen de error del X% se concluye que, por lo menos los [nombres de variable/métrica] de 2 [grupos] son diferentes."
      (o si no se rechaza H0: "A un margen de error del X% se concluye que, Las Promedios de los grupos son iguales.")
 
+## 2.B. Pasos Obligatorios para Pruebas de Contingencia / Categóricas y Conclusión Administrativa (PASO 7)
+En ejercicios de Chi cuadrado (Independencia, Homogeneidad), McNemar, Índice de Kappa de Cohen y Prueba exacta de Fisher:
+1. **PASO 1: Planteamiento de hipótesis** ($H_0$ y $H_1$)
+2. **PASO 2: Determinar el nivel de significancia** (`5% (0.05)`)
+3. **PASO 3: Presentación de tablas de contingencia** (Tabla cruzada de SPSS)
+4. **PASO 4: Determinar la prueba estadística**
+5. **PASO 5: Contrastación de hipótesis** (Tabla SPSS de la prueba + decisión con $p$-valor)
+6. **PASO 6: Conclusión estadística** (Una oración directa: *"A un margen de error del 5% se concluye que, ..."*)
+7. **PASO 7: Conclusión administrativa** (Seguir estrictamente los dos formatos hechos por el docente según el contexto del problema):
+   - **Formato 1 (Cuando $p > \alpha$, no se rechaza $H_0$ y los sistemas/opciones son iguales u homogéneos — Ejemplo Problema 2 del docente):**
+     ```text
+     Dado que los [N] [sistemas/grupos], con respecto a [la métrica/variable] son iguales, se podría sugerir adquirir cualquiera de estos sistemas. El factor diferenciador se podría estar considerando:
+
+     1.Costos
+     2.Garantias
+     3.Interaccion
+     ```
+   - **Formato 2 (Cuando $p \le \alpha$, se rechaza $H_0$ y existe mejora, efectividad, asociación o concordancia significativa — Ejemplo Problema 3 del docente):**
+     ```text
+     Es favorable implementar [el sistema / lenguaje / algoritmo / opción], porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue [la reducción de porcentajes de errores (X%) / el mayor porcentaje de éxito o coincidencia (X%)].
+     ```
+
 ## 3. Generación de Tablas SPSS
 - Utilizar Playwright y CSS fiel a IBM SPSS Statistics 26-29 (bordes azul marino `#103B60`, cabecera gris azulada `#E8ECEF`, flecha roja de navegación `►`, fuente Arial 11px) guardadas en PNG e insertadas en el Word.
 

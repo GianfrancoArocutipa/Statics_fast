@@ -68,6 +68,27 @@ Cuando el usuario proporcione un documento Word (.docx), PDF o texto con ejercic
      - Formato:  
        `A un margen de error del X% se concluye que, por lo menos los [métrica] de 2 [unidades/grupos] son diferentes.`
 
+   - **Estructura de 7 Pasos para Pruebas de Contingencia / Categóricas (Chi cuadrado de Independencia, Homogeneidad, McNemar, Kappa de Cohen, Exacta de Fisher) y Formato Obligatorio del PASO 7 (Conclusión administrativa):**
+     - **PASO 1: Planteamiento de hipótesis** ($H_0$ y $H_1$)
+     - **PASO 2: Determinar el nivel de significancia** (`5% (0.05)`)
+     - **PASO 3: Presentación de tablas de contingencia** (Imagen SPSS `Tabla cruzada`)
+     - **PASO 4: Determinar la prueba estadística** (`Chi cuadrado de independencia`, `Chi cuadrado de homogenidad`, `Chi cuadrado de Mc Nemar`, `Índice de Kappa de Cohen`, `Prueba exacta de Fisher`)
+     - **PASO 5: Contrastación de hipótesis** (Imagen SPSS de la prueba + *"Dado que, el p valor (X.XXX) es [menor/mayor] que nivel de significancia (0.05), es probable que [se rechace / no se rechace] la hipótesis nula."*)
+     - **PASO 6: Conclusión estadística** (*"A un margen de error del 5% se concluye que, ..."*)
+     - **PASO 7: Conclusión administrativa (REGLA CRÍTICA - Usar estrictamente uno de los 2 formatos del docente según el resultado y contexto del problema):**
+       - **Caso A — Cuando NO se rechaza $H_0$ ($p > \alpha$, los sistemas/grupos son iguales u homogéneos, modelo Problema 2 del docente):**
+         ```text
+         Dado que los [N] [sistemas/grupos], con respecto a [la métrica/variable evaluada] son iguales, se podría sugerir adquirir cualquiera de estos sistemas. El factor diferenciador se podría estar considerando:
+
+         1.Costos
+         2.Garantias
+         3.Interaccion
+         ```
+       - **Caso B — Cuando SÍ se rechaza $H_0$ ($p \le \alpha$, existe mejora, asociación, diferencia o concordancia significativa favorable, modelo Problema 3 del docente):**
+         ```text
+         Es favorable implementar [el sistema / lenguaje / algoritmo / opción], porque a mostrado efectividad en los datos mostrados y en sus respectivas pruebas, uno de los factores fue [la reducción de porcentajes de errores (X%) / el mayor porcentaje de éxito o coincidencia (X%)].
+         ```
+
 4. **Compilación de Documentos Finales:**
    - Usar `python-docx` para compilar el archivo `.docx` en formato A4 con encabezado institucional:
      ```text
@@ -82,4 +103,17 @@ Cuando el usuario proporcione un documento Word (.docx), PDF o texto con ejercic
    - Para cada ejercicio contenido en el documento resuelto, se DEBEN generar obligatoriamente los archivos correspondientes dentro de la carpeta `Spss Archivos/` (o subcarpeta designada):
      1. **Archivo de Datos (.sav):** Archivo nativo de SPSS generado con `pyreadstat` estructurando todas las variables, tipos de datos, escalas de medida y etiquetas de valor (Value Labels), nombrado obligatoriamente: `Ejercicio0X_GF.sav` (donde `_GF` son las iniciales del estudiante Gian Franco).
      2. **Archivo de Información de SPSS (.spv / .sps):** Archivo de visor de resultados SPSS (`Ejercicio0X.spv`) y/o sintaxis reproducible (`Ejercicio0X.sps`) con las órdenes y salidas de los procedimientos estadísticos ejecutados.
+
+---
+
+## 3. Ejercicios y Proyectos de Circuitos en Tinkercad (Arduino / Electrónica)
+
+Cuando el usuario proporcione un documento, guía o enunciado donde deba **crear o simular un circuito en Tinkercad**:
+1. **Lista exacta de componentes:** Detallar cada componente tal como aparece en el buscador de Tinkercad (Arduino Uno R3, placa de pruebas pequeña/protoboard, resistencias con su valor en $\Omega$ o $\text{k}\Omega$, LEDs, sensores, servomotores, pantallas LCD, etc.).
+2. **Paso a paso de conexiado (Cableado pin por pin):**
+   - Explicar de forma clara, ordenada y sin ambigüedades qué terminal/pata de cada componente se conecta a qué pin del Arduino (`5V`, `GND`, pines digitales `D2–D13`, pines analógicos `A0–A5`) o fila/riel de la protoboard (`+` y `-`), indicando incluso colores de cable sugeridos.
+3. **Código 100% Funcional (Modo Texto C++ en Tinkercad):**
+   - Entregar el código completo, comentado, probado y 100% compatible con el simulador de Tinkercad (usando únicamente librerías nativas soportadas por Tinkercad como `<Servo.h>`, `<LiquidCrystal.h>`, `<LiquidCrystal_I2C.h>`, `<Keypad.h>`, etc.) cuyos pines coincidan exactamente con el paso a paso del cableado.
+4. **Resolución del documento (si aplica):** Si el documento incluye preguntas, tablas o informe a rellenar, entregar también el documento `.docx` y `.pdf` resuelto manteniendo el 100% de su formato original.
+
 
